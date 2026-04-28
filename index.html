@@ -9,7 +9,6 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f4f0; color: #1a1a1a; min-height: 100vh; font-size: 14px; }
 
-/* ── LOGIN ── */
 #login-screen { display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 24px; }
 .login-card { background: #fff; border: 0.5px solid #ddd; border-radius: 16px; padding: 40px 36px; max-width: 380px; width: 100%; text-align: center; }
 .login-logo { font-size: 28px; font-weight: 500; margin-bottom: 6px; }
@@ -17,240 +16,240 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .login-tagline { font-size: 13px; color: #999; margin-bottom: 32px; }
 .login-title { font-size: 18px; font-weight: 500; margin-bottom: 6px; }
 .login-sub { font-size: 13px; color: #888; margin-bottom: 24px; line-height: 1.6; }
-.google-btn { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 12px; border: 0.5px solid #ddd; border-radius: 8px; background: #fff; font-size: 14px; font-family: inherit; cursor: pointer; transition: background 0.12s; }
-.google-btn:hover { background: #f5f4f0; }
-.google-icon { width: 18px; height: 18px; }
+.login-btn { display: flex; align-items: center; justify-content: center; width: 100%; padding: 11px; border-radius: 8px; font-size: 14px; font-family: inherit; cursor: pointer; margin-bottom: 8px; }
+.login-btn.primary { background: #1a1a1a; color: #fff; border: none; }
+.login-btn.secondary { background: #fff; color: #1a1a1a; border: 0.5px solid #ddd; }
+.login-input { width: 100%; padding: 10px 12px; border: 0.5px solid #ddd; border-radius: 8px; font-size: 14px; font-family: inherit; outline: none; margin-bottom: 8px; }
 
-nav { background: #fff; border-bottom: 0.5px solid #ddd; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; height: 52px; position: sticky; top: 0; z-index: 100; }
-.nav-logo { font-size: 16px; font-weight: 500; }
+nav { background: #fff; border-bottom: 0.5px solid #ddd; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; height: 52px; position: sticky; top: 0; z-index: 100; }
+.nav-logo { font-size: 15px; font-weight: 500; flex-shrink: 0; }
 .nav-logo span { color: #c0392b; }
 .nav-tabs { display: flex; gap: 2px; }
-.nav-tab { padding: 5px 12px; border-radius: 6px; font-size: 13px; cursor: pointer; border: none; background: none; color: #666; font-family: inherit; transition: background 0.12s; }
-.nav-tab:hover { background: #f0eeeb; color: #1a1a1a; }
+.nav-tab { padding: 5px 11px; border-radius: 6px; font-size: 13px; cursor: pointer; border: none; background: none; color: #666; font-family: inherit; }
+.nav-tab:hover { background: #f0eeeb; }
 .nav-tab.active { background: #1a1a1a; color: #fff; }
-.nav-right { display: flex; align-items: center; gap: 10px; }
-.nav-level { font-size: 11px; background: #f0eeeb; padding: 3px 9px; border-radius: 20px; color: #666; }
-.nav-user { width: 28px; height: 28px; border-radius: 50%; background: #1a1a1a; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 500; cursor: pointer; position: relative; }
-.nav-user-menu { position: absolute; top: 36px; right: 0; background: #fff; border: 0.5px solid #ddd; border-radius: 8px; padding: 4px; min-width: 140px; display: none; z-index: 200; }
+.nav-exam-btn { padding: 5px 12px; border-radius: 6px; font-size: 12px; cursor: pointer; border: 0.5px solid #c0392b; background: #fff; color: #c0392b; font-family: inherit; font-weight: 500; transition: all 0.12s; }
+.nav-exam-btn:hover { background: #c0392b; color: #fff; }
+.nav-exam-btn.locked { border-color: #ddd; color: #bbb; cursor: default; }
+.nav-exam-btn.locked:hover { background: #fff; color: #bbb; }
+.nav-right { display: flex; align-items: center; gap: 8px; }
+.nav-level { font-size: 11px; background: #f0eeeb; padding: 3px 8px; border-radius: 20px; color: #666; }
+.nav-user { width: 26px; height: 26px; border-radius: 50%; background: #1a1a1a; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 500; cursor: pointer; position: relative; flex-shrink: 0; }
+.nav-user-menu { position: absolute; top: 32px; right: 0; background: #fff; border: 0.5px solid #ddd; border-radius: 8px; padding: 4px; min-width: 120px; display: none; z-index: 200; }
 .nav-user-menu.show { display: block; }
-.nav-user-menu button { width: 100%; text-align: left; padding: 8px 12px; font-size: 13px; font-family: inherit; background: none; border: none; cursor: pointer; border-radius: 5px; color: #1a1a1a; }
+.nav-user-menu button { width: 100%; text-align: left; padding: 7px 10px; font-size: 13px; font-family: inherit; background: none; border: none; cursor: pointer; border-radius: 4px; }
 .nav-user-menu button:hover { background: #f5f4f0; }
 
-.page { display: none; padding: 28px 24px; max-width: 820px; margin: 0 auto; }
+.page { display: none; padding: 24px 20px; max-width: 800px; margin: 0 auto; }
 .page.active { display: block; }
+.page-header h1 { font-size: 20px; font-weight: 500; margin-bottom: 3px; }
+.page-header p { font-size: 13px; color: #888; margin-bottom: 20px; }
 
-.greeting { font-size: 20px; font-weight: 500; margin-bottom: 2px; }
-.greeting-sub { font-size: 13px; color: #888; margin-bottom: 24px; }
-
-.level-card { background: #fff; border: 0.5px solid #ddd; border-radius: 12px; padding: 18px 22px; margin-bottom: 16px; display: flex; align-items: center; gap: 18px; }
-.level-badge { width: 52px; height: 52px; border-radius: 50%; background: #1a1a1a; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 500; flex-shrink: 0; }
+/* DASHBOARD */
+.greeting { font-size: 19px; font-weight: 500; margin-bottom: 2px; }
+.greeting-sub { font-size: 13px; color: #888; margin-bottom: 20px; }
+.level-card { background: #fff; border: 0.5px solid #ddd; border-radius: 12px; padding: 16px 20px; margin-bottom: 14px; display: flex; align-items: center; gap: 16px; }
+.level-badge { width: 48px; height: 48px; border-radius: 50%; background: #1a1a1a; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 500; flex-shrink: 0; }
 .level-info { flex: 1; }
-.level-info h2 { font-size: 15px; font-weight: 500; margin-bottom: 3px; }
-.level-info p { font-size: 12px; color: #888; margin-bottom: 10px; }
-.progress-bar { height: 5px; background: #eee; border-radius: 3px; }
-.progress-fill { height: 100%; background: #c0392b; border-radius: 3px; transition: width 0.5s; }
-.progress-label { font-size: 11px; color: #aaa; margin-top: 5px; }
-
-.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 20px; }
-.stat-card { background: #fff; border: 0.5px solid #ddd; border-radius: 10px; padding: 14px; }
-.stat-label { font-size: 11px; color: #aaa; margin-bottom: 4px; }
-.stat-value { font-size: 20px; font-weight: 500; }
+.level-info h2 { font-size: 14px; font-weight: 500; margin-bottom: 3px; }
+.level-info p { font-size: 12px; color: #888; margin-bottom: 8px; }
+.progress-bar { height: 4px; background: #eee; border-radius: 2px; }
+.progress-fill { height: 100%; background: #c0392b; border-radius: 2px; transition: width 0.5s; }
+.progress-label { font-size: 11px; color: #aaa; margin-top: 4px; }
+.stats-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; margin-bottom: 18px; }
+.stat-card { background: #fff; border: 0.5px solid #ddd; border-radius: 10px; padding: 12px; }
+.stat-label { font-size: 11px; color: #aaa; margin-bottom: 3px; }
+.stat-value { font-size: 19px; font-weight: 500; }
 .stat-sub { font-size: 11px; color: #bbb; margin-top: 1px; }
-
-.section-title { font-size: 13px; font-weight: 500; color: #888; text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 10px; }
-
-.module-list { display: flex; flex-direction: column; gap: 6px; }
-.module-item { background: #fff; border: 0.5px solid #ddd; border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; gap: 12px; cursor: pointer; transition: border-color 0.12s; }
-.module-item:hover { border-color: #bbb; }
-.module-item.locked { cursor: default; opacity: 0.55; }
-.module-item.locked:hover { border-color: #ddd; }
-.mod-status { width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; flex-shrink: 0; font-weight: 500; }
+.section-title { font-size: 12px; font-weight: 500; color: #888; text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 8px; }
+.module-list { display: flex; flex-direction: column; gap: 5px; }
+.module-item { background: #fff; border: 0.5px solid #ddd; border-radius: 10px; padding: 11px 14px; display: flex; align-items: center; gap: 10px; cursor: pointer; transition: border-color 0.12s; }
+.module-item:hover:not(.locked) { border-color: #bbb; }
+.module-item.locked { cursor: default; opacity: 0.5; }
+.mod-status { width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; flex-shrink: 0; font-weight: 500; }
 .mod-status.done { background: #1a1a1a; color: #fff; }
 .mod-status.active { background: #c0392b; color: #fff; }
 .mod-status.locked { background: #eee; color: #bbb; }
 .mod-info { flex: 1; }
 .mod-name { font-size: 13px; font-weight: 500; }
 .mod-meta { font-size: 11px; color: #aaa; margin-top: 1px; }
-.mod-score { font-size: 12px; }
+.mod-badge { font-size: 11px; padding: 2px 7px; border-radius: 4px; }
+.mod-badge.done { background: #eaf3de; color: #3B6D11; }
+.mod-badge.active { background: #faeeda; color: #854F0B; }
+.mod-badge.locked { color: #ccc; }
 
-.page-header h1 { font-size: 20px; font-weight: 500; margin-bottom: 3px; }
-.page-header p { font-size: 13px; color: #888; margin-bottom: 22px; }
-.back-btn { font-size: 12px; color: #c0392b; cursor: pointer; border: none; background: none; font-family: inherit; padding: 0; margin-bottom: 14px; display: inline-flex; align-items: center; gap: 3px; }
-
-.module-tabs { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 20px; }
-.module-tab { padding: 5px 12px; border-radius: 6px; font-size: 12px; cursor: pointer; border: 0.5px solid #ddd; background: #fff; font-family: inherit; color: #666; transition: all 0.12s; }
-.module-tab:hover { border-color: #aaa; color: #1a1a1a; }
+/* LESSONS */
+.module-tabs { display: flex; gap: 3px; flex-wrap: wrap; margin-bottom: 16px; }
+.module-tab { padding: 4px 10px; border-radius: 5px; font-size: 12px; cursor: pointer; border: 0.5px solid #ddd; background: #fff; font-family: inherit; color: #666; }
 .module-tab.active { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
 .module-tab.locked { opacity: 0.4; cursor: default; }
-
-.theory-card { background: #fff; border: 0.5px solid #ddd; border-radius: 10px; padding: 20px 22px; margin-bottom: 12px; }
-.theory-card h3 { font-size: 14px; font-weight: 500; color: #333; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 0.5px solid #eee; }
-.theory-card p { font-size: 13px; line-height: 1.75; color: #444; margin-bottom: 10px; }
-.theory-card p:last-child { margin-bottom: 0; }
-
-.rule-box { background: #fafaf7; border-left: 3px solid #c0392b; border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 12px 0; }
-.rule-box .rule-title { font-size: 11px; text-transform: uppercase; letter-spacing: 0.7px; color: #c0392b; font-weight: 500; margin-bottom: 6px; }
+.theory-card { background: #fff; border: 0.5px solid #ddd; border-radius: 10px; padding: 18px 20px; margin-bottom: 10px; }
+.theory-card h3 { font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; padding-bottom: 7px; border-bottom: 0.5px solid #eee; }
+.theory-card p { font-size: 13px; line-height: 1.75; color: #444; margin-bottom: 8px; }
+.rule-box { background: #fafaf7; border-left: 3px solid #c0392b; border-radius: 0 7px 7px 0; padding: 10px 14px; margin: 10px 0; }
+.rule-box .rule-title { font-size: 10px; text-transform: uppercase; letter-spacing: 0.7px; color: #c0392b; font-weight: 500; margin-bottom: 5px; }
 .rule-box .rule-body { font-size: 13px; line-height: 1.7; color: #333; }
-
-.example-row { display: flex; gap: 20px; margin: 8px 0; }
-.example-es { font-size: 13px; font-weight: 500; color: #c0392b; min-width: 160px; }
-.example-en { font-size: 13px; color: #888; }
-
-.conj-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin: 12px 0; }
-.conj-verb-card { background: #f5f4f0; border-radius: 8px; padding: 12px 14px; }
-.conj-verb-name { font-size: 12px; font-weight: 500; color: #c0392b; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
-.conj-verb-table { width: 100%; font-size: 12px; }
-.conj-verb-table td { padding: 2px 0; }
-.conj-verb-table td:first-child { color: #aaa; width: 80px; }
-.conj-verb-table td:last-child { font-weight: 500; color: #1a1a1a; }
-
-.rule-table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 13px; }
-.rule-table th { text-align: left; padding: 7px 10px; background: #f5f4f0; font-weight: 500; color: #666; border-bottom: 0.5px solid #ddd; font-size: 12px; }
-.rule-table td { padding: 7px 10px; border-bottom: 0.5px solid #f0eeeb; }
+.conj-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 7px; margin: 10px 0; }
+.conj-verb-card { background: #f5f4f0; border-radius: 7px; padding: 10px 12px; }
+.conj-verb-name { font-size: 11px; font-weight: 500; color: #c0392b; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.5px; }
+.cvt { width: 100%; font-size: 12px; }
+.cvt td { padding: 2px 0; }
+.cvt td:first-child { color: #aaa; width: 75px; }
+.cvt td:last-child { font-weight: 500; }
+.rule-table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 13px; }
+.rule-table th { text-align: left; padding: 6px 9px; background: #f5f4f0; font-weight: 500; color: #666; border-bottom: 0.5px solid #ddd; font-size: 12px; }
+.rule-table td { padding: 6px 9px; border-bottom: 0.5px solid #f0eeeb; }
 .rule-table td.es { font-weight: 500; color: #c0392b; }
 .rule-table tr:last-child td { border-bottom: none; }
+.highlight { background: #fdf3e3; border-radius: 3px; padding: 1px 4px; font-weight: 500; color: #854F0B; }
 
-.lesson-actions { display: flex; gap: 8px; margin-top: 4px; }
-.btn { padding: 9px 18px; border-radius: 8px; font-size: 13px; font-family: inherit; cursor: pointer; border: 0.5px solid #ddd; background: #fff; color: #1a1a1a; transition: all 0.12s; }
+/* EXERCISES */
+.ex-flow-banner { background: #fff; border: 0.5px solid #ddd; border-radius: 10px; padding: 14px 18px; margin-bottom: 14px; display: flex; align-items: center; justify-content: space-between; }
+.ex-flow-step { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #aaa; }
+.ex-flow-step.done { color: #639922; }
+.ex-flow-step.current { color: #1a1a1a; font-weight: 500; }
+.ex-flow-arrow { color: #ddd; font-size: 10px; }
+
+.progress-dots { display: flex; gap: 3px; margin-bottom: 16px; }
+.progress-dot { height: 4px; flex: 1; background: #e8e6e2; border-radius: 2px; }
+.progress-dot.done { background: #1a1a1a; }
+.progress-dot.current { background: #c0392b; }
+
+.exercise-card { background: #fff; border: 0.5px solid #ddd; border-radius: 10px; padding: 18px 20px; margin-bottom: 10px; }
+.ex-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.8px; color: #c0392b; font-weight: 500; margin-bottom: 6px; }
+.ex-q { font-size: 15px; font-weight: 500; margin-bottom: 12px; line-height: 1.5; }
+.ex-context { font-size: 13px; color: #666; font-style: italic; margin-bottom: 12px; line-height: 1.7; background: #fafaf7; border-left: 2px solid #ddd; padding: 8px 12px; border-radius: 0 5px 5px 0; }
+.options { display: flex; flex-direction: column; gap: 5px; }
+.opt { padding: 9px 13px; background: #f5f4f0; border: 0.5px solid #e0deda; border-radius: 6px; font-size: 13px; font-family: inherit; cursor: pointer; text-align: left; transition: all 0.12s; }
+.opt:hover:not(:disabled) { border-color: #bbb; background: #eee; }
+.opt.correct { background: #eaf3de; border-color: #639922; color: #3B6D11; }
+.opt.wrong { background: #fcebeb; border-color: #a32d2d; color: #791F1F; }
+.opt:disabled { cursor: default; }
+.free-input { width: 100%; padding: 9px 13px; border: 0.5px solid #ddd; border-radius: 6px; font-size: 14px; font-family: inherit; outline: none; margin-bottom: 8px; }
+.free-input:focus { border-color: #aaa; }
+.btn { padding: 8px 16px; border-radius: 7px; font-size: 13px; font-family: inherit; cursor: pointer; border: 0.5px solid #ddd; background: #fff; color: #1a1a1a; transition: all 0.12s; }
 .btn:hover { background: #f5f4f0; }
 .btn.btn-dark { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
 .btn.btn-dark:hover { background: #333; }
 .btn.btn-red { background: #c0392b; color: #fff; border-color: #c0392b; }
 .btn.btn-red:hover { background: #a93226; }
-
-.progress-dots { display: flex; gap: 4px; margin-bottom: 18px; }
-.progress-dot { height: 4px; flex: 1; background: #e8e6e2; border-radius: 2px; }
-.progress-dot.done { background: #1a1a1a; }
-.progress-dot.current { background: #c0392b; }
-
-.exercise-card { background: #fff; border: 0.5px solid #ddd; border-radius: 10px; padding: 20px 22px; margin-bottom: 12px; }
-.ex-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; color: #c0392b; font-weight: 500; margin-bottom: 8px; }
-.ex-q { font-size: 15px; font-weight: 500; margin-bottom: 14px; line-height: 1.5; }
-.options { display: flex; flex-direction: column; gap: 6px; }
-.opt { padding: 10px 14px; background: #f5f4f0; border: 0.5px solid #e0deda; border-radius: 7px; font-size: 13px; font-family: inherit; cursor: pointer; text-align: left; transition: all 0.12s; }
-.opt:hover:not(:disabled) { border-color: #bbb; background: #eeece8; }
-.opt.correct { background: #eaf3de; border-color: #639922; color: #3B6D11; }
-.opt.wrong { background: #fcebeb; border-color: #a32d2d; color: #791F1F; }
-.opt:disabled { cursor: default; }
-
-.feedback { margin-top: 12px; padding: 10px 14px; border-radius: 7px; font-size: 13px; line-height: 1.6; }
+.feedback { margin-top: 10px; padding: 9px 13px; border-radius: 6px; font-size: 13px; line-height: 1.6; }
 .feedback.correct { background: #eaf3de; color: #3B6D11; }
 .feedback.wrong { background: #fcebeb; color: #791F1F; }
 
-.exam-banner { background: #1a1a1a; color: #fff; border-radius: 10px; padding: 18px 22px; margin-bottom: 16px; }
-.exam-banner h2 { font-size: 16px; font-weight: 500; margin-bottom: 3px; }
-.exam-banner p { font-size: 12px; color: #888; }
+.completion-card { background: #fff; border: 0.5px solid #ddd; border-radius: 10px; padding: 28px 24px; text-align: center; }
+.completion-score { font-size: 44px; font-weight: 500; margin-bottom: 4px; color: #1a1a1a; }
+.completion-label { font-size: 13px; color: #888; margin-bottom: 20px; }
+.completion-actions { display: flex; gap: 8px; justify-content: center; }
 
-.result-card { background: #fff; border: 0.5px solid #ddd; border-radius: 10px; padding: 22px; margin-bottom: 12px; text-align: center; }
+/* EXAM */
+.exam-banner { background: #1a1a1a; color: #fff; border-radius: 10px; padding: 16px 20px; margin-bottom: 14px; }
+.exam-banner h2 { font-size: 15px; font-weight: 500; margin-bottom: 2px; }
+.exam-banner p { font-size: 12px; color: #888; }
+.result-card { background: #fff; border: 0.5px solid #ddd; border-radius: 10px; padding: 24px; text-align: center; }
 .result-score { font-size: 48px; font-weight: 500; margin-bottom: 4px; }
 .result-score.pass { color: #639922; }
 .result-score.fail { color: #c0392b; }
-.result-label { font-size: 13px; color: #888; margin-bottom: 16px; }
-.review-list { text-align: left; border-top: 0.5px solid #eee; padding-top: 14px; }
-.review-item { display: flex; gap: 10px; padding: 7px 0; border-bottom: 0.5px solid #f5f4f0; font-size: 13px; align-items: flex-start; }
+.review-list { text-align: left; border-top: 0.5px solid #eee; padding-top: 12px; margin-top: 12px; }
+.review-item { display: flex; gap: 8px; padding: 6px 0; border-bottom: 0.5px solid #f5f4f0; font-size: 13px; }
 .review-item:last-child { border-bottom: none; }
-.review-dot { width: 6px; height: 6px; border-radius: 50%; margin-top: 5px; flex-shrink: 0; }
-.review-dot.wrong { background: #c0392b; }
+.review-dot { width: 5px; height: 5px; border-radius: 50%; margin-top: 6px; flex-shrink: 0; background: #c0392b; }
+.back-btn { font-size: 12px; color: #c0392b; cursor: pointer; border: none; background: none; font-family: inherit; padding: 0; margin-bottom: 12px; display: inline-flex; align-items: center; gap: 3px; }
 
-.vocab-toolbar { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; align-items: center; }
-.search-input { flex: 1; min-width: 160px; padding: 7px 11px; border: 0.5px solid #ddd; border-radius: 7px; font-size: 13px; font-family: inherit; background: #fff; outline: none; }
-.search-input:focus { border-color: #aaa; }
-.filter-btns { display: flex; gap: 4px; flex-wrap: wrap; }
-.filter-btn { padding: 5px 10px; border: 0.5px solid #ddd; border-radius: 5px; font-size: 12px; background: #fff; cursor: pointer; font-family: inherit; }
+/* VOCAB */
+.vocab-toolbar { display: flex; gap: 7px; margin-bottom: 12px; flex-wrap: wrap; align-items: center; }
+.search-input { flex: 1; min-width: 150px; padding: 7px 10px; border: 0.5px solid #ddd; border-radius: 6px; font-size: 13px; font-family: inherit; background: #fff; outline: none; }
+.filter-btns { display: flex; gap: 3px; flex-wrap: wrap; }
+.filter-btn { padding: 4px 9px; border: 0.5px solid #ddd; border-radius: 5px; font-size: 12px; background: #fff; cursor: pointer; font-family: inherit; }
 .filter-btn.active { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
-.toggle-row { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #888; }
-.toggle { width: 30px; height: 16px; background: #ddd; border-radius: 8px; position: relative; cursor: pointer; transition: background 0.2s; flex-shrink: 0; }
+.toggle-row { display: flex; align-items: center; gap: 5px; font-size: 12px; color: #888; }
+.toggle { width: 28px; height: 15px; background: #ddd; border-radius: 8px; position: relative; cursor: pointer; transition: background 0.2s; flex-shrink: 0; }
 .toggle.on { background: #c0392b; }
-.toggle::after { content: ''; position: absolute; width: 12px; height: 12px; background: #fff; border-radius: 50%; top: 2px; left: 2px; transition: left 0.2s; }
-.toggle.on::after { left: 16px; }
-
+.toggle::after { content:''; position: absolute; width: 11px; height: 11px; background: #fff; border-radius: 50%; top: 2px; left: 2px; transition: left 0.2s; }
+.toggle.on::after { left: 15px; }
 .vocab-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 10px; overflow: hidden; border: 0.5px solid #ddd; }
-.vocab-table th { text-align: left; padding: 9px 14px; background: #f5f4f0; font-size: 11px; font-weight: 500; color: #999; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 0.5px solid #ddd; }
-.vocab-table td { padding: 9px 14px; border-bottom: 0.5px solid #f0eeeb; font-size: 13px; cursor: pointer; }
+.vocab-table th { text-align: left; padding: 8px 12px; background: #f5f4f0; font-size: 11px; font-weight: 500; color: #999; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 0.5px solid #ddd; }
+.vocab-table td { padding: 8px 12px; border-bottom: 0.5px solid #f0eeeb; font-size: 13px; cursor: pointer; }
 .vocab-table tr:last-child td { border-bottom: none; }
 .vocab-table tr:hover td { background: #fafaf8; }
 .vocab-es { font-weight: 500; color: #c0392b; }
-.vocab-badge { display: inline-block; font-size: 10px; padding: 2px 6px; border-radius: 3px; background: #f0eeeb; color: #888; }
+.vocab-badge { display: inline-block; font-size: 10px; padding: 2px 5px; border-radius: 3px; }
 .vocab-badge.verb { background: #e6f1fb; color: #185FA5; }
 .vocab-badge.noun { background: #eaf3de; color: #3B6D11; }
 .vocab-badge.adj { background: #faeeda; color: #854F0B; }
 .vocab-badge.adv { background: #fbeaf0; color: #993556; }
-.known-indicator { display: inline-block; width: 7px; height: 7px; border-radius: 50%; }
-.known-indicator.yes { background: #639922; }
-.known-indicator.no { background: #ddd; }
+.known-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; }
+.known-dot.yes { background: #639922; }
+.known-dot.no { background: #ddd; }
 
-.popup-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.25); z-index: 200; align-items: center; justify-content: center; }
+/* POPUP */
+.popup-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.25); z-index: 200; align-items: center; justify-content: center; }
 .popup-overlay.show { display: flex; }
-.popup { background: #fff; border-radius: 12px; padding: 22px; max-width: 340px; width: 90%; border: 0.5px solid #ddd; }
-.popup-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; }
-.popup-word { font-size: 22px; font-weight: 500; color: #c0392b; }
-.popup-close { cursor: pointer; font-size: 18px; color: #bbb; border: none; background: none; font-family: inherit; line-height: 1; padding: 0; }
-.popup-type { font-size: 12px; color: #aaa; margin-top: 2px; }
-.popup-note { font-size: 13px; color: #555; margin-bottom: 14px; line-height: 1.65; }
-.popup-section-title { font-size: 11px; text-transform: uppercase; letter-spacing: 0.7px; color: #999; font-weight: 500; margin-bottom: 8px; }
+.popup { background: #fff; border-radius: 12px; padding: 20px; max-width: 330px; width: 90%; border: 0.5px solid #ddd; }
+.popup-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+.popup-word { font-size: 20px; font-weight: 500; color: #c0392b; }
+.popup-close { cursor: pointer; font-size: 17px; color: #bbb; border: none; background: none; }
+.popup-type { font-size: 12px; color: #aaa; margin-top: 1px; }
+.popup-note { font-size: 13px; color: #555; margin-bottom: 12px; line-height: 1.6; }
+.popup-sec-title { font-size: 11px; text-transform: uppercase; letter-spacing: 0.7px; color: #999; font-weight: 500; margin-bottom: 6px; }
 .popup-conj { width: 100%; font-size: 13px; border-collapse: collapse; }
-.popup-conj td { padding: 5px 0; border-bottom: 0.5px solid #f0eeeb; }
-.popup-conj td:first-child { color: #aaa; width: 100px; }
+.popup-conj td { padding: 4px 0; border-bottom: 0.5px solid #f0eeeb; }
+.popup-conj td:first-child { color: #aaa; width: 95px; }
 .popup-conj td:last-child { font-weight: 500; }
 .popup-conj tr:last-child td { border-bottom: none; }
 
-.grammar-list { display: flex; flex-direction: column; gap: 6px; }
+/* GRAMMAR */
+.grammar-list { display: flex; flex-direction: column; gap: 5px; }
 .grammar-item { background: #fff; border: 0.5px solid #ddd; border-radius: 10px; overflow: hidden; }
-.grammar-header { padding: 13px 16px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; gap: 10px; }
+.grammar-header { padding: 12px 14px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; gap: 8px; }
 .grammar-header:hover { background: #fafaf8; }
-.grammar-header-left { display: flex; align-items: center; gap: 10px; }
-.grammar-icon { width: 28px; height: 28px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 500; flex-shrink: 0; }
+.grammar-header-left { display: flex; align-items: center; gap: 8px; }
+.grammar-icon { width: 26px; height: 26px; border-radius: 5px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 500; flex-shrink: 0; }
 .grammar-icon.red { background: #fcebeb; color: #c0392b; }
 .grammar-icon.blue { background: #e6f1fb; color: #185FA5; }
 .grammar-icon.green { background: #eaf3de; color: #3B6D11; }
 .grammar-icon.amber { background: #faeeda; color: #854F0B; }
 .grammar-title { font-size: 13px; font-weight: 500; }
-.grammar-tags { display: flex; gap: 5px; align-items: center; flex-shrink: 0; }
-.g-tag { font-size: 10px; padding: 2px 7px; border-radius: 3px; background: #f0eeeb; color: #888; }
-.g-tag.a1 { background: #eaf3de; color: #3B6D11; }
-.grammar-chevron { font-size: 10px; color: #ccc; flex-shrink: 0; }
-.grammar-body { padding: 0 16px 16px 16px; font-size: 13px; line-height: 1.75; color: #444; border-top: 0.5px solid #f0eeeb; display: none; }
+.g-tag { font-size: 10px; padding: 2px 6px; border-radius: 3px; background: #eaf3de; color: #3B6D11; }
+.grammar-chevron { font-size: 10px; color: #ccc; }
+.grammar-body { padding: 0 14px 14px; font-size: 13px; line-height: 1.75; color: #444; border-top: 0.5px solid #f0eeeb; display: none; }
 .grammar-body.open { display: block; }
-.grammar-body p { margin-top: 10px; }
-.tb-rule { background: #fafaf7; border-left: 3px solid #c0392b; border-radius: 0 6px 6px 0; padding: 10px 14px; margin: 12px 0; font-size: 13px; }
-.tb-rule .tb-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.7px; color: #c0392b; font-weight: 500; margin-bottom: 5px; }
-.tb-ex { display: flex; gap: 14px; margin: 5px 0; }
-.tb-es { font-weight: 500; color: #c0392b; min-width: 180px; }
+.grammar-body p { margin-top: 8px; }
+.tb-rule { background: #fafaf7; border-left: 3px solid #c0392b; border-radius: 0 5px 5px 0; padding: 8px 12px; margin: 10px 0; font-size: 13px; }
+.tb-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.7px; color: #c0392b; font-weight: 500; margin-bottom: 4px; }
+.tb-ex { display: flex; gap: 12px; margin: 4px 0; }
+.tb-es { font-weight: 500; color: #c0392b; min-width: 170px; }
 .tb-en { color: #888; }
-.highlight { background: #fdf3e3; border-radius: 3px; padding: 1px 4px; font-weight: 500; color: #854F0B; }
 
-.saving-indicator { position: fixed; bottom: 16px; right: 16px; background: #1a1a1a; color: #fff; padding: 8px 14px; border-radius: 8px; font-size: 12px; opacity: 0; transition: opacity 0.3s; z-index: 300; }
+.saving-indicator { position: fixed; bottom: 14px; right: 14px; background: #1a1a1a; color: #fff; padding: 7px 12px; border-radius: 7px; font-size: 12px; opacity: 0; transition: opacity 0.3s; z-index: 300; }
 .saving-indicator.show { opacity: 1; }
 
 @media (max-width: 600px) {
-  nav { padding: 0 12px; }
-  .nav-tab { padding: 4px 8px; font-size: 11px; }
-  .page { padding: 16px 12px; }
-  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  nav { padding: 0 10px; }
+  .nav-tab { padding: 4px 7px; font-size: 11px; }
+  .page { padding: 14px 10px; }
+  .stats-grid { grid-template-columns: repeat(2,1fr); }
   .conj-grid { grid-template-columns: 1fr; }
+  .ex-flow-banner { display: none; }
 }
 </style>
 </head>
 <body>
 
-<!-- LOGIN -->
 <div id="login-screen">
   <div class="login-card">
     <div class="login-logo">es<span>·</span>app</div>
     <div class="login-tagline">Your personal Spanish learning journey</div>
-    <div id="login-mode-title" class="login-title">Welcome back</div>
-    <div class="login-sub" id="login-mode-sub">Sign in to continue your journey toward A2.</div>
-    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:12px">
-      <input id="login-email" type="email" placeholder="Email address" style="padding:10px 12px;border:0.5px solid #ddd;border-radius:8px;font-size:14px;font-family:inherit;outline:none;">
-      <input id="login-password" type="password" placeholder="Password" style="padding:10px 12px;border:0.5px solid #ddd;border-radius:8px;font-size:14px;font-family:inherit;outline:none;">
-    </div>
-    <button class="google-btn" onclick="handleLogin()" style="background:#1a1a1a;color:#fff;border:none;justify-content:center;margin-bottom:10px">Sign in</button>
-    <button class="google-btn" onclick="handleSignUp()" style="justify-content:center">Create account</button>
-    <p id="login-error" style="color:#c0392b;font-size:12px;margin-top:12px;display:none"></p>
+    <div class="login-title">Welcome back</div>
+    <div class="login-sub">Sign in to continue your A1 → A2 journey.</div>
+    <input id="login-email" class="login-input" type="email" placeholder="Email address">
+    <input id="login-password" class="login-input" type="password" placeholder="Password">
+    <button class="login-btn primary" onclick="handleLogin()">Sign in</button>
+    <button class="login-btn secondary" onclick="handleSignUp()">Create account</button>
+    <p id="login-error" style="font-size:12px;margin-top:10px;display:none"></p>
   </div>
 </div>
 
-<!-- APP -->
 <div id="app" style="display:none">
 <nav>
   <div class="nav-logo">es<span>·</span>app</div>
@@ -261,10 +260,10 @@ nav { background: #fff; border-bottom: 0.5px solid #ddd; display: flex; align-it
     <button class="nav-tab" onclick="showPage('grammar')">Grammar</button>
   </div>
   <div class="nav-right">
+    <button class="nav-exam-btn locked" id="nav-exam-btn" onclick="startExamFromNav()">Take exam</button>
     <div class="nav-level">A1 → A2</div>
-    <div class="nav-user" id="nav-avatar" onclick="toggleUserMenu()">?</div>
-    <div class="nav-user-menu" id="user-menu">
-      <button onclick="signOut()">Sign out</button>
+    <div class="nav-user" id="nav-avatar" onclick="toggleUserMenu()">?
+      <div class="nav-user-menu" id="user-menu"><button onclick="signOut()">Sign out</button></div>
     </div>
   </div>
 </nav>
@@ -272,7 +271,7 @@ nav { background: #fff; border-bottom: 0.5px solid #ddd; display: flex; align-it
 <!-- DASHBOARD -->
 <div class="page active" id="page-dashboard">
   <p class="greeting" id="dash-greeting">Hola</p>
-  <p class="greeting-sub">Here's where you stand today on your journey to A2.</p>
+  <p class="greeting-sub">Here's where you stand on your journey to A2.</p>
   <div class="level-card">
     <div class="level-badge">A1</div>
     <div class="level-info">
@@ -284,8 +283,8 @@ nav { background: #fff; border-bottom: 0.5px solid #ddd; display: flex; align-it
   </div>
   <div class="stats-grid">
     <div class="stat-card"><div class="stat-label">Words learned</div><div class="stat-value" id="stat-words">—</div><div class="stat-sub">of ~300 A1 words</div></div>
-    <div class="stat-card"><div class="stat-label">Exam pass rate</div><div class="stat-value" id="stat-pass">—</div><div class="stat-sub">across completed exams</div></div>
-    <div class="stat-card"><div class="stat-label">Exercises done</div><div class="stat-value" id="stat-exercises">—</div><div class="stat-sub">total</div></div>
+    <div class="stat-card"><div class="stat-label">Exam pass rate</div><div class="stat-value" id="stat-pass">—</div><div class="stat-sub">across exams</div></div>
+    <div class="stat-card"><div class="stat-label">Exercises done</div><div class="stat-value" id="stat-exercises">—</div></div>
     <div class="stat-card"><div class="stat-label">Modules done</div><div class="stat-value" id="stat-modules">—</div><div class="stat-sub">of 7</div></div>
   </div>
   <div class="section-title">A1 modules</div>
@@ -295,38 +294,56 @@ nav { background: #fff; border-bottom: 0.5px solid #ddd; display: flex; align-it
 <!-- LESSONS -->
 <div class="page" id="page-lessons">
   <div id="lessons-home">
-    <div class="page-header"><h1>Lessons</h1><p>Select a module to study. Complete the theory, practise, then take the exam to unlock the next module.</p></div>
+    <div class="page-header"><h1>Lessons</h1><p>Study the theory, then complete the exercises to unlock the module exam.</p></div>
     <div class="module-tabs" id="module-tabs"></div>
     <div id="module-content"></div>
-    <div class="lesson-actions" style="margin-top:16px">
-      <button class="btn btn-dark" onclick="showExercise()">Practice exercises →</button>
-      <button class="btn btn-red" onclick="showExamView()">Take module exam</button>
+    <div style="margin-top:14px">
+      <button class="btn btn-dark" id="start-exercises-btn" onclick="showExercises()">Start exercises →</button>
     </div>
   </div>
+
+  <!-- EXERCISES -->
   <div id="exercise-view" style="display:none">
     <button class="back-btn" onclick="backToLesson()">← Back to lesson</button>
-    <div class="page-header"><h1>Practice exercises</h1><p>Apply what you've learned. Questions mix grammar and vocabulary.</p></div>
+    <div class="ex-flow-banner">
+      <div class="ex-flow-step done">1. Theory</div>
+      <div class="ex-flow-arrow">→</div>
+      <div class="ex-flow-step current">2. Exercises</div>
+      <div class="ex-flow-arrow">→</div>
+      <div class="ex-flow-step" id="flow-exam-step">3. Exam</div>
+    </div>
+    <div class="page-header"><h1 id="ex-module-title">Practice exercises</h1><p id="ex-module-sub">Complete all exercises to unlock the module exam.</p></div>
     <div class="progress-dots" id="ex-dots"></div>
     <div id="ex-question-area"></div>
     <div id="ex-feedback-area"></div>
-    <div id="ex-next" style="display:none;margin-top:8px"><button class="btn btn-dark" onclick="nextEx()">Next question →</button></div>
+    <div id="ex-next" style="display:none;margin-top:8px"><button class="btn btn-dark" onclick="nextEx()">Next →</button></div>
+    <div id="ex-completion" style="display:none"></div>
   </div>
+
+  <!-- EXAM -->
   <div id="exam-view" style="display:none">
-    <button class="back-btn" onclick="backToLesson()">← Back to lesson</button>
-    <div class="exam-banner"><h2 id="exam-title">Module exam</h2><p>Pass mark: 70% · You must pass to unlock the next module</p></div>
+    <button class="back-btn" onclick="backToLesson()">← Back</button>
+    <div class="ex-flow-banner">
+      <div class="ex-flow-step done">1. Theory</div>
+      <div class="ex-flow-arrow">→</div>
+      <div class="ex-flow-step done">2. Exercises</div>
+      <div class="ex-flow-arrow">→</div>
+      <div class="ex-flow-step current">3. Exam</div>
+    </div>
+    <div class="exam-banner"><h2 id="exam-title">Module exam</h2><p>Pass mark: 70% · Pass to unlock the next module</p></div>
     <div class="progress-dots" id="exam-dots"></div>
     <div id="exam-question-area"></div>
     <div id="exam-feedback-area"></div>
-    <div id="exam-next" style="display:none;margin-top:8px"><button class="btn btn-dark" id="exam-next-btn">Next question →</button></div>
+    <div id="exam-next" style="display:none;margin-top:8px"><button class="btn btn-dark" id="exam-next-btn">Next →</button></div>
     <div id="exam-result" style="display:none"></div>
   </div>
 </div>
 
 <!-- VOCABULARY -->
 <div class="page" id="page-vocab">
-  <div class="page-header"><h1>Vocabulary bank</h1><p>Your personal Spanish vocabulary. Tap any word for details and conjugations.</p></div>
+  <div class="page-header"><h1>Vocabulary bank</h1><p>Tap any word for conjugations and examples.</p></div>
   <div class="vocab-toolbar">
-    <input class="search-input" type="text" placeholder="Search words…" oninput="renderVocab()" id="vocab-search">
+    <input class="search-input" type="text" placeholder="Search…" oninput="renderVocab()" id="vocab-search">
     <div class="filter-btns">
       <button class="filter-btn active" onclick="setVFilter('all',this)">All</button>
       <button class="filter-btn" onclick="setVFilter('verb',this)">Verbs</button>
@@ -347,7 +364,7 @@ nav { background: #fff; border-bottom: 0.5px solid #ddd; display: flex; align-it
 
 <!-- GRAMMAR -->
 <div class="page" id="page-grammar">
-  <div class="page-header"><h1>Grammar reference</h1><p>Your personal reference library. Tap any topic to expand the full rule.</p></div>
+  <div class="page-header"><h1>Grammar reference</h1><p>Tap any topic to expand the full rule.</p></div>
   <div class="grammar-list" id="grammar-list"></div>
 </div>
 </div>
@@ -361,14 +378,12 @@ nav { background: #fff; border-bottom: 0.5px solid #ddd; display: flex; align-it
     </div>
     <p class="popup-note" id="popup-note"></p>
     <div id="popup-conj-section" style="display:none">
-      <div class="popup-section-title">Present tense conjugation</div>
+      <div class="popup-sec-title">Present tense</div>
       <table class="popup-conj" id="popup-conj"></table>
     </div>
-    <div id="popup-example-section" style="display:none;margin-top:12px">
-      <div class="popup-section-title">Example sentence</div>
-      <div class="tb-rule" style="margin:6px 0">
-        <div class="tb-ex"><span class="tb-es" id="popup-ex-es"></span><span class="tb-en" id="popup-ex-en"></span></div>
-      </div>
+    <div id="popup-ex-section" style="display:none;margin-top:10px">
+      <div class="popup-sec-title">Example</div>
+      <div class="tb-rule" style="margin:5px 0"><div class="tb-ex"><span class="tb-es" id="popup-ex-es"></span><span class="tb-en" id="popup-ex-en"></span></div></div>
     </div>
   </div>
 </div>
@@ -376,93 +391,60 @@ nav { background: #fff; border-bottom: 0.5px solid #ddd; display: flex; align-it
 <div class="saving-indicator" id="saving-indicator">Saving…</div>
 
 <script>
-/* ═══════════════════ SUPABASE ═══════════════════ */
-const SUPABASE_URL = 'https://wkkmzwwerflzquxiuked.supabase.co';
-const SUPABASE_KEY = 'sb_publishable_39ByLDQaaQvejmT4eNQP2w_zzOgL8Ey';
-const { createClient } = supabase;
-const sb = createClient(SUPABASE_URL, SUPABASE_KEY);
-
+/* ══════════ SUPABASE ══════════ */
+const SURL = 'https://wkkmzwwerflzquxiuked.supabase.co';
+const SKEY = 'sb_publishable_39ByLDQaaQvejmT4eNQP2w_zzOgL8Ey';
+const sb = supabase.createClient(SURL, SKEY);
 let currentUser = null;
-let userProgress = { completedModules: [], examScores: {}, exerciseCount: 0 };
-let userVocabKnown = new Set();
+let UP = { completedModules:[], examScores:{}, exerciseCount:0, completedExercises:[] };
+let vocabKnown = new Set();
 
 async function handleLogin() {
-  const email = document.getElementById('login-email').value;
-  const password = document.getElementById('login-password').value;
-  const errEl = document.getElementById('login-error');
-  errEl.style.display = 'none';
-  const { error } = await sb.auth.signInWithPassword({ email, password });
-  if (error) { errEl.textContent = error.message; errEl.style.display = 'block'; }
+  const e = document.getElementById('login-email').value;
+  const p = document.getElementById('login-password').value;
+  const err = document.getElementById('login-error');
+  err.style.display = 'none';
+  const { error } = await sb.auth.signInWithPassword({ email:e, password:p });
+  if (error) { err.style.color='#c0392b'; err.textContent=error.message; err.style.display='block'; }
 }
-
 async function handleSignUp() {
-  const email = document.getElementById('login-email').value;
-  const password = document.getElementById('login-password').value;
-  const errEl = document.getElementById('login-error');
-  errEl.style.display = 'none';
-  if (password.length < 6) { errEl.textContent = 'Password must be at least 6 characters.'; errEl.style.display = 'block'; return; }
-  const { error } = await sb.auth.signUp({ email, password });
-  if (error) { errEl.textContent = error.message; errEl.style.display = 'block'; }
-  else { errEl.style.color = '#639922'; errEl.textContent = 'Account created! Check your email to confirm, then sign in.'; errEl.style.display = 'block'; }
+  const e = document.getElementById('login-email').value;
+  const p = document.getElementById('login-password').value;
+  const err = document.getElementById('login-error');
+  err.style.display = 'none';
+  if (p.length < 6) { err.style.color='#c0392b'; err.textContent='Password must be at least 6 characters.'; err.style.display='block'; return; }
+  const { error } = await sb.auth.signUp({ email:e, password:p });
+  if (error) { err.style.color='#c0392b'; err.textContent=error.message; err.style.display='block'; }
+  else { err.style.color='#639922'; err.textContent='Account created! You can now sign in.'; err.style.display='block'; }
 }
-
-async function signOut() {
-  await sb.auth.signOut();
-  currentUser = null;
-  document.getElementById('app').style.display = 'none';
-  document.getElementById('login-screen').style.display = 'flex';
-  document.getElementById('user-menu').classList.remove('show');
-}
-
-function toggleUserMenu() {
-  document.getElementById('user-menu').classList.toggle('show');
-}
-document.addEventListener('click', e => {
-  if (!e.target.closest('.nav-user')) document.getElementById('user-menu').classList.remove('show');
-});
+async function signOut() { await sb.auth.signOut(); location.reload(); }
+function toggleUserMenu() { document.getElementById('user-menu').classList.toggle('show'); }
+document.addEventListener('click', e => { if(!e.target.closest('.nav-user')) document.getElementById('user-menu').classList.remove('show'); });
 
 async function loadProgress() {
-  if (!currentUser) return;
   const { data } = await sb.from('user_progress').select('*').eq('user_id', currentUser.id).single();
   if (data) {
-    userProgress = {
-      completedModules: data.completed_modules || [],
-      examScores: data.exam_scores || {},
-      exerciseCount: data.exercise_count || 0
-    };
-    userVocabKnown = new Set(data.vocab_known || VOCAB.filter(w=>w.known).map(w=>w.es));
+    UP = { completedModules: data.completed_modules||[], examScores: data.exam_scores||{}, exerciseCount: data.exercise_count||0, completedExercises: data.completed_exercises||[] };
+    vocabKnown = new Set(data.vocab_known || VOCAB.filter(w=>w.known).map(w=>w.es));
   } else {
-    userVocabKnown = new Set(VOCAB.filter(w=>w.known).map(w=>w.es));
+    vocabKnown = new Set(VOCAB.filter(w=>w.known).map(w=>w.es));
     await saveProgress();
   }
 }
-
 async function saveProgress() {
   if (!currentUser) return;
   showSaving();
-  await sb.from('user_progress').upsert({
-    user_id: currentUser.id,
-    completed_modules: userProgress.completedModules,
-    exam_scores: userProgress.examScores,
-    exercise_count: userProgress.exerciseCount,
-    vocab_known: Array.from(userVocabKnown),
-    updated_at: new Date().toISOString()
-  }, { onConflict: 'user_id' });
+  await sb.from('user_progress').upsert({ user_id:currentUser.id, completed_modules:UP.completedModules, exam_scores:UP.examScores, exercise_count:UP.exerciseCount, completed_exercises:UP.completedExercises, vocab_known:Array.from(vocabKnown), updated_at:new Date().toISOString() }, { onConflict:'user_id' });
 }
-
-function showSaving() {
-  const el = document.getElementById('saving-indicator');
-  el.classList.add('show');
-  setTimeout(() => el.classList.remove('show'), 1500);
-}
+function showSaving() { const el=document.getElementById('saving-indicator'); el.classList.add('show'); setTimeout(()=>el.classList.remove('show'),1500); }
 
 sb.auth.onAuthStateChange(async (event, session) => {
   if (session?.user) {
     currentUser = session.user;
-    const name = currentUser.user_metadata?.full_name?.split(' ')[0] || 'there';
+    const name = (currentUser.user_metadata?.full_name||currentUser.email||'').split(' ')[0].split('@')[0];
     document.getElementById('dash-greeting').textContent = 'Hola, ' + name + ' 👋';
-    const initials = (currentUser.user_metadata?.full_name || '?').split(' ').map(n=>n[0]).join('').slice(0,2).toUpperCase();
-    document.getElementById('nav-avatar').textContent = initials;
+    const initials = name.slice(0,2).toUpperCase();
+    document.getElementById('nav-avatar').innerHTML = initials + '<div class="nav-user-menu" id="user-menu"><button onclick="signOut()">Sign out</button></div>';
     document.getElementById('login-screen').style.display = 'none';
     document.getElementById('app').style.display = 'block';
     await loadProgress();
@@ -470,42 +452,124 @@ sb.auth.onAuthStateChange(async (event, session) => {
   }
 });
 
-/* ═══════════════════ DATA ═══════════════════ */
+/* ══════════ DATA ══════════ */
 const MODULES = [
-  { id:1, name:'Greetings & introductions', meta:'Vocabulary + ser/estar basics' },
-  { id:2, name:'Numbers, dates & time', meta:'0–100, days, months, telling time' },
-  { id:3, name:'Gender & articles', meta:'el/la/los/las, un/una, noun gender' },
-  { id:4, name:'Present tense — regular verbs', meta:'-AR, -ER, -IR conjugations' },
-  { id:5, name:'Present tense — irregular verbs', meta:'ser, estar, tener, ir, hacer…' },
-  { id:6, name:'Adjectives & agreement', meta:'Gender/number agreement, position' },
-  { id:7, name:'Basic sentence structure', meta:'Negatives, questions, word order' },
+  {id:1,name:'Greetings & introductions',meta:'Vocabulary + ser/estar basics'},
+  {id:2,name:'Numbers, dates & time',meta:'0–100, days, months, telling time'},
+  {id:3,name:'Gender & articles',meta:'el/la/los/las, un/una, noun gender'},
+  {id:4,name:'Present tense — regular verbs',meta:'-AR, -ER, -IR conjugations'},
+  {id:5,name:'Present tense — irregular verbs',meta:'ser, estar, tener, ir, hacer…'},
+  {id:6,name:'Adjectives & agreement',meta:'Gender/number agreement, position'},
+  {id:7,name:'Basic sentence structure',meta:'Negatives, questions, word order'},
 ];
 
 const MODULE_CONTENT = {
-  1:`<div class="theory-card"><h3>Greetings</h3><div class="rule-box"><div class="rule-title">Key rule</div><div class="rule-body">Spanish has formal (<strong>usted</strong>) and informal (<strong>tú</strong>) registers. Use formal with strangers and authority figures.</div></div><table class="rule-table"><tr><th>Spanish</th><th>English</th><th>Context</th></tr><tr><td class="es">Hola</td><td>Hello</td><td>Informal, any time</td></tr><tr><td class="es">Buenos días</td><td>Good morning</td><td>Until ~12:00</td></tr><tr><td class="es">Buenas tardes</td><td>Good afternoon</td><td>12:00–20:00</td></tr><tr><td class="es">Buenas noches</td><td>Good evening/night</td><td>After 20:00</td></tr><tr><td class="es">¿Cómo estás?</td><td>How are you?</td><td>Informal</td></tr><tr><td class="es">¿Cómo está usted?</td><td>How are you?</td><td>Formal</td></tr></table></div><div class="theory-card"><h3>Introducing yourself — ser</h3><p>Use the verb <strong>ser</strong> (to be) for permanent identity — name, origin, profession.</p><div class="conj-grid"><div class="conj-verb-card"><div class="conj-verb-name">ser — to be</div><table class="conj-verb-table"><tr><td>yo</td><td>soy</td></tr><tr><td>tú</td><td>eres</td></tr><tr><td>él/ella</td><td>es</td></tr><tr><td>nosotros</td><td>somos</td></tr><tr><td>ellos</td><td>son</td></tr></table></div></div><div class="rule-box"><div class="rule-title">Example</div><div class="rule-body">Me llamo Isi. <span style="color:#888">— My name is Isi.</span><br>Soy de Suiza. <span style="color:#888">— I am from Switzerland.</span></div></div></div>`,
-  2:`<div class="theory-card"><h3>Numbers 0–20</h3><table class="rule-table"><tr><th>0–10</th><th></th><th>11–20</th><th></th></tr><tr><td class="es">cero</td><td>0</td><td class="es">once</td><td>11</td></tr><tr><td class="es">uno</td><td>1</td><td class="es">doce</td><td>12</td></tr><tr><td class="es">dos</td><td>2</td><td class="es">trece</td><td>13</td></tr><tr><td class="es">tres</td><td>3</td><td class="es">catorce</td><td>14</td></tr><tr><td class="es">cuatro</td><td>4</td><td class="es">quince</td><td>15</td></tr><tr><td class="es">cinco</td><td>5</td><td class="es">dieciséis</td><td>16</td></tr><tr><td class="es">seis</td><td>6</td><td class="es">diecisiete</td><td>17</td></tr><tr><td class="es">siete</td><td>7</td><td class="es">dieciocho</td><td>18</td></tr><tr><td class="es">ocho</td><td>8</td><td class="es">diecinueve</td><td>19</td></tr><tr><td class="es">nueve</td><td>9</td><td class="es">veinte</td><td>20</td></tr><tr><td class="es">diez</td><td>10</td><td></td><td></td></tr></table></div><div class="theory-card"><h3>Days of the week</h3><div class="rule-box"><div class="rule-title">Key rule</div><div class="rule-body">Days of the week are <strong>not capitalised</strong> in Spanish. They are all masculine.</div></div><table class="rule-table"><tr><th>Spanish</th><th>English</th></tr><tr><td class="es">lunes</td><td>Monday</td></tr><tr><td class="es">martes</td><td>Tuesday</td></tr><tr><td class="es">miércoles</td><td>Wednesday</td></tr><tr><td class="es">jueves</td><td>Thursday</td></tr><tr><td class="es">viernes</td><td>Friday</td></tr><tr><td class="es">sábado</td><td>Saturday</td></tr><tr><td class="es">domingo</td><td>Sunday</td></tr></table></div>`,
-  3:`<div class="theory-card"><h3>Noun gender in Spanish</h3><p>Every Spanish noun is either masculine or feminine. The article must always match the gender of the noun.</p><div class="rule-box"><div class="rule-title">General rule</div><div class="rule-body">Nouns ending in <strong>-o</strong> are usually <strong>masculine</strong>. Nouns ending in <strong>-a</strong> are usually <strong>feminine</strong>. But there are important exceptions — always check.</div></div><table class="rule-table"><tr><th></th><th>Masculine</th><th>Feminine</th></tr><tr><td>Singular "the"</td><td class="es">el libro</td><td class="es">la mesa</td></tr><tr><td>Plural "the"</td><td class="es">los libros</td><td class="es">las mesas</td></tr><tr><td>Singular "a/an"</td><td class="es">un libro</td><td class="es">una mesa</td></tr><tr><td>Plural "some"</td><td class="es">unos libros</td><td class="es">unas mesas</td></tr></table><div class="rule-box"><div class="rule-title">Notable exceptions</div><div class="rule-body"><strong>el agua</strong> (f) — water &nbsp;|&nbsp; <strong>el día</strong> (m) — day &nbsp;|&nbsp; <strong>la mano</strong> (f) — hand</div></div></div>`,
-  4:`<div class="theory-card"><h3>How regular verbs work in Spanish</h3><p>Verbs are grouped by their infinitive ending: <strong>-AR</strong>, <strong>-ER</strong>, or <strong>-IR</strong>. Remove the ending, then add the ending that matches the subject.</p><div class="rule-box"><div class="rule-title">Key rule</div><div class="rule-body">Spanish does <strong>not</strong> require a subject pronoun — the verb ending already tells you who is acting. <em>Hablo</em> already means "I speak".</div></div><div class="conj-grid"><div class="conj-verb-card"><div class="conj-verb-name">hablar — to speak (-AR)</div><table class="conj-verb-table"><tr><td>yo</td><td>hablo</td></tr><tr><td>tú</td><td>hablas</td></tr><tr><td>él/ella</td><td>habla</td></tr><tr><td>nosotros</td><td>hablamos</td></tr><tr><td>ellos</td><td>hablan</td></tr></table></div><div class="conj-verb-card"><div class="conj-verb-name">comer — to eat (-ER)</div><table class="conj-verb-table"><tr><td>yo</td><td>como</td></tr><tr><td>tú</td><td>comes</td></tr><tr><td>él/ella</td><td>come</td></tr><tr><td>nosotros</td><td>comemos</td></tr><tr><td>ellos</td><td>comen</td></tr></table></div><div class="conj-verb-card"><div class="conj-verb-name">vivir — to live (-IR)</div><table class="conj-verb-table"><tr><td>yo</td><td>vivo</td></tr><tr><td>tú</td><td>vives</td></tr><tr><td>él/ella</td><td>vive</td></tr><tr><td>nosotros</td><td>vivimos</td></tr><tr><td>ellos</td><td>viven</td></tr></table></div><div class="conj-verb-card"><div class="conj-verb-name">Pattern summary</div><table class="conj-verb-table"><tr><td>yo</td><td>-o</td></tr><tr><td>tú</td><td>-as/-es/-es</td></tr><tr><td>él/ella</td><td>-a/-e/-e</td></tr><tr><td>nosotros</td><td>-amos/-emos/-imos</td></tr><tr><td>ellos</td><td>-an/-en/-en</td></tr></table></div></div></div>`,
-  5:`<div class="theory-card"><h3>Common irregular verbs — ser, estar, tener, ir</h3><p>These verbs do not follow regular patterns and must be learned individually.</p><div class="rule-box"><div class="rule-title">Ser vs Estar</div><div class="rule-body"><strong>Ser</strong> = permanent identity (name, origin, profession)<br><strong>Estar</strong> = temporary state or location (how you feel, where you are)</div></div><div class="conj-grid"><div class="conj-verb-card"><div class="conj-verb-name">ser — to be (permanent)</div><table class="conj-verb-table"><tr><td>yo</td><td>soy</td></tr><tr><td>tú</td><td>eres</td></tr><tr><td>él/ella</td><td>es</td></tr><tr><td>nosotros</td><td>somos</td></tr><tr><td>ellos</td><td>son</td></tr></table></div><div class="conj-verb-card"><div class="conj-verb-name">estar — to be (state)</div><table class="conj-verb-table"><tr><td>yo</td><td>estoy</td></tr><tr><td>tú</td><td>estás</td></tr><tr><td>él/ella</td><td>está</td></tr><tr><td>nosotros</td><td>estamos</td></tr><tr><td>ellos</td><td>están</td></tr></table></div><div class="conj-verb-card"><div class="conj-verb-name">tener — to have</div><table class="conj-verb-table"><tr><td>yo</td><td>tengo</td></tr><tr><td>tú</td><td>tienes</td></tr><tr><td>él/ella</td><td>tiene</td></tr><tr><td>nosotros</td><td>tenemos</td></tr><tr><td>ellos</td><td>tienen</td></tr></table></div><div class="conj-verb-card"><div class="conj-verb-name">ir — to go</div><table class="conj-verb-table"><tr><td>yo</td><td>voy</td></tr><tr><td>tú</td><td>vas</td></tr><tr><td>él/ella</td><td>va</td></tr><tr><td>nosotros</td><td>vamos</td></tr><tr><td>ellos</td><td>van</td></tr></table></div></div></div>`,
-  6:`<div class="theory-card"><h3>Adjective agreement</h3><p>In Spanish, adjectives must agree in <strong>gender</strong> and <strong>number</strong> with the noun they describe.</p><div class="rule-box"><div class="rule-title">Gender agreement rule</div><div class="rule-body">Adjectives ending in <strong>-o</strong> change to <strong>-a</strong> for feminine nouns. Adjectives ending in <strong>-e</strong> or a consonant do not change for gender.</div></div><table class="rule-table"><tr><th>Masc. sg.</th><th>Fem. sg.</th><th>Masc. pl.</th><th>Fem. pl.</th><th>Meaning</th></tr><tr><td class="es">alto</td><td class="es">alta</td><td class="es">altos</td><td class="es">altas</td><td>tall</td></tr><tr><td class="es">pequeño</td><td class="es">pequeña</td><td class="es">pequeños</td><td class="es">pequeñas</td><td>small</td></tr><tr><td class="es">grande</td><td class="es">grande</td><td class="es">grandes</td><td class="es">grandes</td><td>big</td></tr><tr><td class="es">feliz</td><td class="es">feliz</td><td class="es">felices</td><td class="es">felices</td><td>happy</td></tr></table><div class="rule-box"><div class="rule-title">Position rule</div><div class="rule-body">Descriptive adjectives usually go <strong>after</strong> the noun: <em>un coche rojo</em> (a red car).</div></div></div>`,
-  7:`<div class="theory-card"><h3>Building sentences — word order</h3><p>Spanish follows Subject–Verb–Object (SVO) order. Subjects can be omitted because verb endings encode them.</p><div class="rule-box"><div class="rule-title">Negative sentences</div><div class="rule-body">Place <strong>no</strong> directly before the verb.<br><em>No hablo inglés.</em> — I don't speak English.</div></div><div class="rule-box"><div class="rule-title">Questions</div><div class="rule-body">Add inverted question marks <strong>¿ ?</strong> and use rising intonation.<br><em>¿Hablas español?</em> — Do you speak Spanish?</div></div><table class="rule-table"><tr><th>Question word</th><th>Spanish</th><th>Example</th></tr><tr><td>What?</td><td class="es">¿Qué?</td><td><em>¿Qué comes?</em></td></tr><tr><td>Who?</td><td class="es">¿Quién?</td><td><em>¿Quién eres?</em></td></tr><tr><td>Where?</td><td class="es">¿Dónde?</td><td><em>¿Dónde vives?</em></td></tr><tr><td>When?</td><td class="es">¿Cuándo?</td><td><em>¿Cuándo comes?</em></td></tr><tr><td>Why?</td><td class="es">¿Por qué?</td><td><em>¿Por qué estudias?</em></td></tr><tr><td>How?</td><td class="es">¿Cómo?</td><td><em>¿Cómo estás?</em></td></tr></table></div>`,
+1:`<div class="theory-card"><h3>Greetings and farewells</h3>
+<p>Spanish greetings change depending on the time of day and the level of formality. This is one of the first things you need to master.</p>
+<table class="rule-table"><tr><th>Spanish</th><th>English</th><th>When to use</th></tr>
+<tr><td class="es">Hola</td><td>Hello / Hi</td><td>Any time, informal</td></tr>
+<tr><td class="es">Buenos días</td><td>Good morning</td><td>Until around 12:00</td></tr>
+<tr><td class="es">Buenas tardes</td><td>Good afternoon</td><td>12:00 – 20:00</td></tr>
+<tr><td class="es">Buenas noches</td><td>Good evening / night</td><td>After 20:00</td></tr>
+<tr><td class="es">Adiós</td><td>Goodbye</td><td>Any time</td></tr>
+<tr><td class="es">Hasta luego</td><td>See you later</td><td>Informal farewell</td></tr>
+<tr><td class="es">Hasta mañana</td><td>See you tomorrow</td><td>When you'll meet again</td></tr></table>
+<div class="rule-box"><div class="rule-title">Asking how someone is</div><div class="rule-body">
+¿Cómo estás? — How are you? (informal, to a friend)<br>
+¿Cómo está usted? — How are you? (formal, to a stranger or superior)<br>
+Estoy bien, gracias. — I am well, thank you.<br>
+Estoy muy bien. — I am very well.<br>
+Más o menos. — So-so / Not bad.</div></div></div>
+<div class="theory-card"><h3>Introducing yourself — ser vs estar</h3>
+<p>Spanish has two verbs that both mean "to be": <strong>ser</strong> and <strong>estar</strong>. This is one of the most important distinctions in Spanish. You must use the right one depending on what you are describing.</p>
+<div class="rule-box"><div class="rule-title">The golden rule</div><div class="rule-body">
+<strong>Ser</strong> = who you ARE — your permanent identity: name, nationality, profession, origin.<br>
+<strong>Estar</strong> = how you ARE — your temporary state or location: feelings, health, where you are right now.</div></div>
+<div class="conj-grid">
+<div class="conj-verb-card"><div class="conj-verb-name">ser — permanent identity</div><table class="cvt"><tr><td>yo</td><td>soy</td></tr><tr><td>tú</td><td>eres</td></tr><tr><td>él/ella</td><td>es</td></tr><tr><td>nosotros</td><td>somos</td></tr><tr><td>ellos</td><td>son</td></tr></table></div>
+<div class="conj-verb-card"><div class="conj-verb-name">estar — state / location</div><table class="cvt"><tr><td>yo</td><td>estoy</td></tr><tr><td>tú</td><td>estás</td></tr><tr><td>él/ella</td><td>está</td></tr><tr><td>nosotros</td><td>estamos</td></tr><tr><td>ellos</td><td>están</td></tr></table></div></div>
+<table class="rule-table"><tr><th>Ser (permanent)</th><th>Estar (temporary)</th></tr>
+<tr><td class="es">Soy española.</td><td class="es">Estoy cansada.</td></tr>
+<tr><td style="color:#888">I am Spanish. (nationality)</td><td style="color:#888">I am tired. (feeling right now)</td></tr>
+<tr><td class="es">Soy médico.</td><td class="es">Estoy en Madrid.</td></tr>
+<tr><td style="color:#888">I am a doctor. (profession)</td><td style="color:#888">I am in Madrid. (location)</td></tr>
+<tr><td class="es">Somos amigos.</td><td class="es">Estamos bien.</td></tr>
+<tr><td style="color:#888">We are friends. (relationship)</td><td style="color:#888">We are fine. (current state)</td></tr></table></div>
+<div class="theory-card"><h3>Introducing yourself</h3>
+<p>To introduce yourself in Spanish, you use a combination of ser, llamarse (to be called), and tener (to have — for age).</p>
+<div class="rule-box"><div class="rule-title">Key phrases</div><div class="rule-body">
+Me llamo… — My name is… (literally: I call myself…)<br>
+Soy de… — I am from…<br>
+Vivo en… — I live in…<br>
+Tengo [número] años. — I am [number] years old.<br>
+Soy [profesión]. — I am a [profession].</div></div></div>`,
+
+4:`<div class="theory-card"><h3>How regular verbs work in Spanish</h3>
+<p>In Spanish, every verb has an infinitive — its base form. Infinitives end in <strong>-AR</strong>, <strong>-ER</strong>, or <strong>-IR</strong>. To conjugate a verb (adapt it to a subject), you remove the infinitive ending and replace it with the ending that matches who is doing the action.</p>
+<div class="rule-box"><div class="rule-title">Key rule — no subject pronoun needed</div><div class="rule-body">Unlike English, Spanish does not require a subject pronoun. The verb ending already tells you who is acting.<br><em>Hablo</em> already means "I speak". You do not need to say <em>Yo hablo</em>.</div></div>
+<div class="conj-grid">
+<div class="conj-verb-card"><div class="conj-verb-name">hablar — to speak (-AR)</div><table class="cvt"><tr><td>yo</td><td>hablo</td></tr><tr><td>tú</td><td>hablas</td></tr><tr><td>él/ella</td><td>habla</td></tr><tr><td>nosotros</td><td>hablamos</td></tr><tr><td>ellos</td><td>hablan</td></tr></table></div>
+<div class="conj-verb-card"><div class="conj-verb-name">comer — to eat (-ER)</div><table class="cvt"><tr><td>yo</td><td>como</td></tr><tr><td>tú</td><td>comes</td></tr><tr><td>él/ella</td><td>come</td></tr><tr><td>nosotros</td><td>comemos</td></tr><tr><td>ellos</td><td>comen</td></tr></table></div>
+<div class="conj-verb-card"><div class="conj-verb-name">vivir — to live (-IR)</div><table class="cvt"><tr><td>yo</td><td>vivo</td></tr><tr><td>tú</td><td>vives</td></tr><tr><td>él/ella</td><td>vive</td></tr><tr><td>nosotros</td><td>vivimos</td></tr><tr><td>ellos</td><td>viven</td></tr></table></div>
+<div class="conj-verb-card"><div class="conj-verb-name">Endings summary</div><table class="cvt"><tr><td>yo</td><td>-o</td></tr><tr><td>tú</td><td>-as / -es / -es</td></tr><tr><td>él/ella</td><td>-a / -e / -e</td></tr><tr><td>nosotros</td><td>-amos / -emos / -imos</td></tr><tr><td>ellos</td><td>-an / -en / -en</td></tr></table></div></div>
+<div class="rule-box"><div class="rule-title">Common regular verbs to know</div><div class="rule-body">
+-AR: hablar (speak), trabajar (work), escuchar (listen), estudiar (study), comprar (buy)<br>
+-ER: comer (eat), beber (drink), leer (read), comprender (understand)<br>
+-IR: vivir (live), escribir (write), abrir (open), recibir (receive)</div></div></div>`,
 };
+// Fill remaining modules with placeholder
+[2,3,5,6,7].forEach(id => {
+  if (!MODULE_CONTENT[id]) MODULE_CONTENT[id] = `<div class="theory-card"><h3>Module ${id} — Coming soon</h3><p style="color:#888">This module content is being prepared. Check back soon.</p></div>`;
+});
 
-const EXERCISES = [
-  {q:'María _____ en Madrid con su familia. (vivir)',opts:['vivo','vive','vivimos','viven'],ans:1,fb_c:'¡Correcto! María = ella → "vive" (él/ella form of vivir).',fb_w:'Incorrect. María = ella → third person singular → "vive".'},
-  {q:'¿Tú _____ español en el trabajo? (hablar)',opts:['hablan','hablo','hablas','hablamos'],ans:2,fb_c:'¡Correcto! Tú → "hablas" (-AR verb, second person singular).',fb_w:'Incorrect. "Tú" requires: "hablas".'},
-  {q:'Nosotros _____ en un restaurante los viernes. (comer)',opts:['come','comemos','comen','como'],ans:1,fb_c:'¡Correcto! Nosotros → "comemos" (-ER verb, first person plural).',fb_w:'Incorrect. "Nosotros" requires: "comemos".'},
-  {q:'Which sentence is correct?',opts:['Yo hablas mucho.','Tú hablo mucho.','Ella habla mucho.','Nosotros hablan mucho.'],ans:2,fb_c:'¡Correcto! Ella → "habla" (third person singular, -AR verb).',fb_w:'Incorrect. The correct match is ella → "habla".'},
-  {q:'Los estudiantes _____ muchos libros. (leer)',opts:['lees','lee','leemos','leen'],ans:3,fb_c:'¡Correcto! Los estudiantes = ellos → "leen" (-ER verb, third person plural).',fb_w:'Incorrect. "Los estudiantes" = ellos → "leen".'},
-];
+/* ══════════ EXERCISES PER MODULE ══════════ */
+const MODULE_EXERCISES = {
+1: [
+  {type:'mc', label:'Choose the correct answer', q:'You meet your colleague at 9am. How do you greet her in Spanish?', opts:['Buenas noches','Buenos días','Hasta luego','Buenas tardes'], ans:1, fb_c:'¡Correcto! Buenos días is used until around 12:00.', fb_w:'"Buenos días" means "good morning" and is used until around 12:00.'},
+  {type:'mc', label:'Ser or estar?', q:'Choose the correct verb: "Ella _____ médica." (She is a doctor — profession)', opts:['está','estás','es','son'], ans:2, fb_c:'¡Correcto! Profession is a permanent identity → use ser → "es".', fb_w:'Profession is permanent identity → use ser → "es". Estar is for temporary states.'},
+  {type:'mc', label:'Ser or estar?', q:'Choose the correct verb: "Yo _____ muy cansado." (I am very tired — feeling)', opts:['soy','somos','estás','estoy'], ans:3, fb_c:'¡Correcto! Tiredness is a temporary state → use estar → "estoy".', fb_w:'Tiredness is a temporary state → use estar → "estoy". Ser is for permanent identity.'},
+  {type:'free', label:'Translate to Spanish', q:'How do you say "My name is Isi and I am from Switzerland"?', ans:['me llamo isi y soy de suiza','me llamo isi y soy de suiza.'], hint:'Use "me llamo" for name and "ser" for origin.', fb:'Me llamo Isi y soy de Suiza. — Note: soy (ser) for origin, not estoy.'},
+  {type:'mc', label:'Reading comprehension', context:'"Hola, me llamo Carlos. Soy de Madrid pero vivo en Barcelona. Soy programador y estoy muy contento con mi trabajo."', q:'Why does Carlos use "soy" for his job but "estoy" for his feelings?', opts:['They are the same verb','Soy = permanent identity, estoy = current feeling','Soy is formal, estoy is informal','It is a mistake'], ans:1, fb_c:'¡Correcto! Soy programador = permanent identity (ser). Estoy contento = current feeling (estar).', fb_w:'Soy programador = permanent identity → ser. Estoy contento = how he feels right now → estar.'},
+  {type:'mc', label:'Choose the correct answer', q:'"¿Cómo _____ usted?" — formal question to a stranger', opts:['estás','eres','está','es'], ans:2, fb_c:'¡Correcto! Formal "usted" uses está (estar), and usted takes the él/ella form.', fb_w:'With "usted" (formal), use está. Estás is the informal tú form.'},
+  {type:'free', label:'Fill in the blank', q:'Complete: "Nosotros _____ de Francia." (We are from France — origin)', ans:['somos'], hint:'Origin = permanent → use ser. Nosotros form of ser.', fb:'Somos — nosotros form of ser. Origin is permanent identity → always use ser.'},
+  {type:'mc', label:'Ser or estar?', q:'Your friend asks: "¿Dónde _____ el restaurante?" (Where is the restaurant?)', opts:['es','son','está','estoy'], ans:2, fb_c:'¡Correcto! Location uses estar → está.', fb_w:'Location always uses estar → está. Remember: estar = temporary states AND location.'},
+],
+4: [
+  {type:'mc', label:'Fill in the blank', q:'"María _____ en Madrid con su familia." (vivir)', opts:['vivo','vive','vivimos','viven'], ans:1, fb_c:'¡Correcto! María = ella → "vive" (él/ella form of vivir, -IR verb).', fb_w:'María is ella → third person singular → "vive". (-IR: vivo, vives, vive, vivimos, viven)'},
+  {type:'mc', label:'Fill in the blank', q:'"¿Tú _____ español en el trabajo?" (hablar)', opts:['hablan','hablo','hablas','hablamos'], ans:2, fb_c:'¡Correcto! Tú → "hablas" (-AR verb, second person singular).', fb_w:'"Tú" → second person singular → "hablas". (-AR: hablo, hablas, habla, hablamos, hablan)'},
+  {type:'free', label:'Conjugate the verb', q:'Write the nosotros form of "comer" (to eat).', ans:['comemos'], hint:'-ER verb. Nosotros ending for -ER verbs is -emos.', fb:'Comemos — nosotros form of comer (-ER verb). Remove -ER, add -emos.'},
+  {type:'mc', label:'Spot the mistake', q:'Which sentence contains a grammatical error?', opts:['Yo hablo mucho.','Ella trabaja en una oficina.','Nosotros comemos pasta.','Tú escucháis música.'], ans:3, fb_c:'¡Correcto! "Escucháis" is the vosotros form (used in Spain). For tú: escuchas.', fb_w:'"Tú escucháis" is wrong — "escucháis" is the vosotros form. For tú: "escuchas".'},
+  {type:'mc', label:'Reading comprehension', context:'"Me llamo Ana. Trabajo en una empresa internacional. Por las mañanas, bebo café y leo el periódico. Mis colegas hablan inglés, francés y español."', q:'What does Ana drink in the mornings?', opts:['Tea','Water','Coffee','Juice'], ans:2, fb_c:'¡Correcto! "Bebo café" = I drink coffee.', fb_w:'"Bebo café" means I drink coffee. Bebo = yo form of beber (-ER verb).'},
+  {type:'free', label:'Translate to Spanish', q:'How do you say "They read many books"? (leer = to read, muchos libros = many books)', ans:['leen muchos libros'], hint:'Ellos form of leer (-ER verb). Remove -ER, add -en.', fb:'Leen muchos libros. — Leen is the ellos form of leer (-ER: leo, lees, lee, leemos, leen).'},
+  {type:'mc', label:'Fill in the blank', q:'"Los estudiantes _____ muchos libros." (leer)', opts:['lees','lee','leemos','leen'], ans:3, fb_c:'¡Correcto! Los estudiantes = ellos → "leen".', fb_w:'"Los estudiantes" = ellos → third person plural → "leen".'},
+  {type:'mc', label:'Choose the correct sentence', q:'Which sentence is grammatically correct?', opts:['Yo comes pasta.','Tú hablo mucho.','Ella trabaja en casa.','Nosotros beben agua.'], ans:2, fb_c:'¡Correcto! Ella trabaja — ella/él form of -AR verb = -a.', fb_w:'Only "Ella trabaja en casa" is correct. The others have mismatched subjects and verb endings.'},
+],
+};
+// Default exercises for unwritten modules
+[2,3,5,6,7].forEach(id => {
+  if (!MODULE_EXERCISES[id]) MODULE_EXERCISES[id] = [
+    {type:'mc',label:'Coming soon',q:'More exercises for this module are being prepared.',opts:['OK'],ans:0,fb_c:'Thanks for your patience!',fb_w:''},
+  ];
+});
 
-const EXAM_QS = [
-  {q:'Choose the correct form of "trabajar" for nosotros:',opts:['trabajo','trabajas','trabajamos','trabajan'],ans:2},
-  {q:'Which is the yo form of "escribir"?',opts:['escribe','escribes','escribimos','escribo'],ans:3},
+/* EXAM QUESTIONS PER MODULE */
+const MODULE_EXAMS = {
+1: [
+  {q:'Choose the correct greeting for 3pm:',opts:['Buenos días','Buenas noches','Buenas tardes','Hola amigo'],ans:2},
+  {q:'"Soy médico." — Which verb is used and why?',opts:['Estar — location','Ser — permanent identity','Estar — feelings','Ser — temporary state'],ans:1},
+  {q:'"_____ muy cansada." (I am very tired)',opts:['Soy','Somos','Estoy','Estás'],ans:2},
+  {q:'How do you say "My name is Ana and I am from Spain"?',opts:['Me llamo Ana y estoy de España.','Me llamo Ana y soy de España.','Soy Ana y estoy España.','Llamo Ana y soy de España.'],ans:1},
+  {q:'"El restaurante _____ en el centro." (location)',opts:['es','son','somos','está'],ans:3},
+],
+4: [
+  {q:'Correct form of "trabajar" for nosotros:',opts:['trabajo','trabajas','trabajamos','trabajan'],ans:2},
+  {q:'Yo form of "escribir":',opts:['escribe','escribes','escribimos','escribo'],ans:3},
   {q:'"Ellos _____ mucha agua." (beber)',opts:['bebe','bebes','bebemos','beben'],ans:3},
-  {q:'Select the correct sentence:',opts:['Yo comes pasta.','Tú come pasta.','Ella come pasta.','Nosotros come pasta.'],ans:2},
+  {q:'Which sentence is correct?',opts:['Yo comes pasta.','Tú come pasta.','Ella come pasta.','Nosotros come pasta.'],ans:2},
   {q:'"Yo _____ en Suiza." (vivir)',opts:['vives','vive','vivo','vivimos'],ans:2},
-];
+],
+};
+[2,3,5,6,7].forEach(id => { if(!MODULE_EXAMS[id]) MODULE_EXAMS[id] = MODULE_EXAMS[1]; });
 
 const VOCAB = [
   {es:'hablar',en:'to speak',type:'verb',gender:'',known:true,note:'Common -AR regular verb',conj:'hablo,hablas,habla,hablamos,hablan',ex_es:'Yo hablo español.',ex_en:'I speak Spanish.'},
@@ -513,297 +577,355 @@ const VOCAB = [
   {es:'vivir',en:'to live',type:'verb',gender:'',known:true,note:'Common -IR regular verb',conj:'vivo,vives,vive,vivimos,viven',ex_es:'Vivimos en Madrid.',ex_en:'We live in Madrid.'},
   {es:'ser',en:'to be (permanent)',type:'verb',gender:'',known:true,note:'Irregular. Use for identity, origin, profession',conj:'soy,eres,es,somos,son',ex_es:'Soy de Suiza.',ex_en:'I am from Switzerland.'},
   {es:'estar',en:'to be (state/location)',type:'verb',gender:'',known:true,note:'Irregular. Use for feelings, location, temporary states',conj:'estoy,estás,está,estamos,están',ex_es:'Estoy bien, gracias.',ex_en:'I am well, thank you.'},
-  {es:'tener',en:'to have',type:'verb',gender:'',known:true,note:'Irregular. Note: tengo (yo form)',conj:'tengo,tienes,tiene,tenemos,tienen',ex_es:'Tengo veinte años.',ex_en:'I am twenty years old.'},
-  {es:'la familia',en:'the family',type:'noun',gender:'fem.',known:true,note:'Always feminine. Plural: las familias',conj:'',ex_es:'Mi familia vive en Basilea.',ex_en:'My family lives in Basel.'},
-  {es:'el trabajo',en:'work / job',type:'noun',gender:'masc.',known:true,note:'Also used in: ir al trabajo',conj:'',ex_es:'Mi trabajo es interesante.',ex_en:'My job is interesting.'},
+  {es:'tener',en:'to have',type:'verb',gender:'',known:true,note:'Irregular. tengo (yo form)',conj:'tengo,tienes,tiene,tenemos,tienen',ex_es:'Tengo veinte años.',ex_en:'I am twenty years old.'},
+  {es:'la familia',en:'the family',type:'noun',gender:'fem.',known:true,note:'Plural: las familias',conj:'',ex_es:'Mi familia vive en Basilea.',ex_en:'My family lives in Basel.'},
+  {es:'el trabajo',en:'work / job',type:'noun',gender:'masc.',known:true,note:'Ir al trabajo = to go to work',conj:'',ex_es:'Mi trabajo es interesante.',ex_en:'My job is interesting.'},
   {es:'grande',en:'big / large',type:'adj',gender:'',known:true,note:'Does not change for gender. Plural: grandes',conj:'',ex_es:'Es una ciudad grande.',ex_en:'It is a large city.'},
   {es:'bueno/buena',en:'good',type:'adj',gender:'',known:true,note:'Masc: bueno, Fem: buena. Before masc. noun: buen',conj:'',ex_es:'Es un buen restaurante.',ex_en:'It is a good restaurant.'},
-  {es:'muy',en:'very',type:'adv',gender:'',known:true,note:'Placed directly before adjectives and adverbs',conj:'',ex_es:'Estoy muy bien.',ex_en:'I am very well.'},
-  {es:'pequeño/a',en:'small',type:'adj',gender:'',known:false,note:'Agrees in gender: pequeño (m) / pequeña (f)',conj:'',ex_es:'Tengo un piso pequeño.',ex_en:'I have a small apartment.'},
+  {es:'muy',en:'very',type:'adv',gender:'',known:true,note:'Placed before adjectives and adverbs',conj:'',ex_es:'Estoy muy bien.',ex_en:'I am very well.'},
+  {es:'pequeño/a',en:'small',type:'adj',gender:'',known:false,note:'pequeño (m) / pequeña (f)',conj:'',ex_es:'Tengo un piso pequeño.',ex_en:'I have a small apartment.'},
   {es:'escribir',en:'to write',type:'verb',gender:'',known:false,note:'-IR regular verb',conj:'escribo,escribes,escribe,escribimos,escriben',ex_es:'Escribo emails en español.',ex_en:'I write emails in Spanish.'},
   {es:'el agua',en:'water',type:'noun',gender:'masc.*',known:false,note:'Feminine noun but uses masculine article: el agua',conj:'',ex_es:'El agua está fría.',ex_en:'The water is cold.'},
   {es:'siempre',en:'always',type:'adv',gender:'',known:false,note:'Position: before or after the verb',conj:'',ex_es:'Siempre como en casa.',ex_en:'I always eat at home.'},
-  {es:'también',en:'also / too',type:'adv',gender:'',known:false,note:'Placed after the verb or at start of sentence',conj:'',ex_es:'Yo también hablo francés.',ex_en:'I also speak French.'},
+  {es:'también',en:'also / too',type:'adv',gender:'',known:false,note:'After verb or at start of sentence',conj:'',ex_es:'Yo también hablo francés.',ex_en:'I also speak French.'},
 ];
 
 const GRAMMAR_TOPICS = [
-  {icon:'G',iconClass:'red',title:'Gender and articles — el, la, los, las',body:`<p>Every Spanish noun has a gender: masculine or feminine. The article must match the noun's gender and number.</p><div class="tb-rule"><div class="tb-label">Definite articles (the)</div><div class="tb-ex"><span class="tb-es">el libro / los libros</span><span class="tb-en">the book / the books (masc.)</span></div><div class="tb-ex"><span class="tb-es">la mesa / las mesas</span><span class="tb-en">the table / the tables (fem.)</span></div></div><div class="tb-rule"><div class="tb-label">General rule</div>Nouns ending in <span class="highlight">-o</span> → usually masculine. Nouns ending in <span class="highlight">-a</span> → usually feminine.<br>Exceptions: <em>el agua, el día, la mano, el mapa</em></div>`},
-  {icon:'¬',iconClass:'blue',title:'Building a negative sentence',body:`<p>To make any sentence negative, place <span class="highlight">no</span> directly before the conjugated verb.</p><div class="tb-rule"><div class="tb-label">Structure</div>Subject + <span class="highlight">no</span> + verb + rest of sentence</div><div class="tb-ex"><span class="tb-es">No hablo inglés.</span><span class="tb-en">I do not speak English.</span></div><div class="tb-ex"><span class="tb-es">Ella no come carne.</span><span class="tb-en">She does not eat meat.</span></div><p>Double negatives are correct in Spanish: <em>No tengo <strong>nada</strong></em> — I don't have anything.</p>`},
-  {icon:'R',iconClass:'green',title:'Reflexive verbs — llamarse, levantarse',body:`<p>Reflexive verbs indicate the subject acts on itself. Identified by <span class="highlight">se</span> attached to the infinitive.</p><div class="tb-rule"><div class="tb-label">Reflexive pronouns</div>me (yo) · te (tú) · se (él/ella) · nos (nosotros) · se (ellos)</div><div class="tb-ex"><span class="tb-es">Me llamo Isi.</span><span class="tb-en">My name is Isi.</span></div><div class="tb-ex"><span class="tb-es">¿Cómo te llamas?</span><span class="tb-en">What is your name?</span></div><p>Common A1 reflexive verbs: llamarse, levantarse, acostarse, ducharse.</p>`},
-  {icon:'?',iconClass:'amber',title:'Asking questions — question words',body:`<p>Spanish question words always carry an accent mark. All questions open with <span class="highlight">¿</span>.</p><div class="tb-rule"><div class="tb-label">Question words</div><div class="tb-ex"><span class="tb-es">¿Qué?</span><span class="tb-en">What?</span></div><div class="tb-ex"><span class="tb-es">¿Quién?</span><span class="tb-en">Who?</span></div><div class="tb-ex"><span class="tb-es">¿Dónde?</span><span class="tb-en">Where?</span></div><div class="tb-ex"><span class="tb-es">¿Cuándo?</span><span class="tb-en">When?</span></div><div class="tb-ex"><span class="tb-es">¿Por qué?</span><span class="tb-en">Why?</span></div><div class="tb-ex"><span class="tb-es">¿Cómo?</span><span class="tb-en">How?</span></div></div>`},
-  {icon:'S',iconClass:'red',title:'Ser vs Estar — two ways to say "to be"',body:`<p>Spanish has two verbs for "to be". Choosing correctly is one of the most important A1 skills.</p><div class="tb-rule"><div class="tb-label">Ser — permanent or defining</div><div class="tb-ex"><span class="tb-es">Soy española.</span><span class="tb-en">I am Spanish. (nationality)</span></div><div class="tb-ex"><span class="tb-es">Es médico.</span><span class="tb-en">He is a doctor. (profession)</span></div></div><div class="tb-rule"><div class="tb-label">Estar — temporary state or location</div><div class="tb-ex"><span class="tb-es">Estoy cansada.</span><span class="tb-en">I am tired. (temporary feeling)</span></div><div class="tb-ex"><span class="tb-es">Está en Madrid.</span><span class="tb-en">She is in Madrid. (location)</span></div></div>`},
-  {icon:'A',iconClass:'blue',title:'Adjective agreement — gender and number',body:`<p>Adjectives must agree in gender and number with the noun they describe.</p><div class="tb-rule"><div class="tb-label">Rule</div>Adjectives ending in <span class="highlight">-o</span> change to <span class="highlight">-a</span> for feminine. Add <span class="highlight">-s</span> for plural.</div><div class="tb-ex"><span class="tb-es">un chico alto / una chica alta</span><span class="tb-en">a tall boy / a tall girl</span></div><div class="tb-ex"><span class="tb-es">un libro interesante / una película interesante</span><span class="tb-en">an interesting book / film</span></div><p>Most adjectives follow the noun: <em>un coche rojo</em>. A few go before: <em>buen, mal, gran</em>.</p>`},
+  {icon:'G',iconClass:'red',title:'Gender and articles — el, la, los, las',body:`<p>Every Spanish noun has a gender: masculine or feminine. The article must match.</p><div class="tb-rule"><div class="tb-label">Definite articles (the)</div><div class="tb-ex"><span class="tb-es">el libro / los libros</span><span class="tb-en">the book / the books (masc.)</span></div><div class="tb-ex"><span class="tb-es">la mesa / las mesas</span><span class="tb-en">the table / the tables (fem.)</span></div></div><div class="tb-rule"><div class="tb-label">General rule</div>Nouns ending in <span class="highlight">-o</span> → usually masculine. Nouns ending in <span class="highlight">-a</span> → usually feminine.<br>Exceptions: <em>el agua, el día, la mano</em></div>`},
+  {icon:'S',iconClass:'red',title:'Ser vs Estar — two verbs for "to be"',body:`<div class="tb-rule"><div class="tb-label">Ser — permanent or defining</div><div class="tb-ex"><span class="tb-es">Soy española.</span><span class="tb-en">I am Spanish. (nationality)</span></div><div class="tb-ex"><span class="tb-es">Es médico.</span><span class="tb-en">He is a doctor. (profession)</span></div></div><div class="tb-rule"><div class="tb-label">Estar — temporary state or location</div><div class="tb-ex"><span class="tb-es">Estoy cansada.</span><span class="tb-en">I am tired. (temporary feeling)</span></div><div class="tb-ex"><span class="tb-es">Está en Madrid.</span><span class="tb-en">She is in Madrid. (location)</span></div></div>`},
+  {icon:'¬',iconClass:'blue',title:'Building a negative sentence',body:`<p>Place <span class="highlight">no</span> directly before the conjugated verb.</p><div class="tb-ex"><span class="tb-es">No hablo inglés.</span><span class="tb-en">I do not speak English.</span></div><div class="tb-ex"><span class="tb-es">Ella no come carne.</span><span class="tb-en">She does not eat meat.</span></div><p>Double negatives are correct: <em>No tengo nada</em> — I don't have anything.</p>`},
+  {icon:'R',iconClass:'green',title:'Reflexive verbs — llamarse, levantarse',body:`<p>Reflexive verbs use <span class="highlight">se</span> in the infinitive. Place the matching pronoun before the verb.</p><div class="tb-rule"><div class="tb-label">Reflexive pronouns</div>me (yo) · te (tú) · se (él/ella) · nos (nosotros) · se (ellos)</div><div class="tb-ex"><span class="tb-es">Me llamo Isi.</span><span class="tb-en">My name is Isi.</span></div><div class="tb-ex"><span class="tb-es">¿Cómo te llamas?</span><span class="tb-en">What is your name?</span></div>`},
+  {icon:'?',iconClass:'amber',title:'Asking questions — question words',body:`<div class="tb-rule"><div class="tb-label">Question words</div><div class="tb-ex"><span class="tb-es">¿Qué?</span><span class="tb-en">What?</span></div><div class="tb-ex"><span class="tb-es">¿Quién?</span><span class="tb-en">Who?</span></div><div class="tb-ex"><span class="tb-es">¿Dónde?</span><span class="tb-en">Where?</span></div><div class="tb-ex"><span class="tb-es">¿Cuándo?</span><span class="tb-en">When?</span></div><div class="tb-ex"><span class="tb-es">¿Por qué?</span><span class="tb-en">Why?</span></div><div class="tb-ex"><span class="tb-es">¿Cómo?</span><span class="tb-en">How?</span></div></div><p>All questions open with an inverted question mark <span class="highlight">¿</span></p>`},
+  {icon:'A',iconClass:'blue',title:'Adjective agreement',body:`<div class="tb-rule"><div class="tb-label">Rule</div>Adjectives ending in <span class="highlight">-o</span> change to <span class="highlight">-a</span> for feminine. Add <span class="highlight">-s</span> for plural.</div><div class="tb-ex"><span class="tb-es">un chico alto / una chica alta</span><span class="tb-en">a tall boy / a tall girl</span></div><div class="tb-ex"><span class="tb-es">un libro interesante / una película interesante</span><span class="tb-en">an interesting book / film</span></div><p>Most adjectives follow the noun: <em>un coche rojo</em>.</p>`},
 ];
 
-/* ═══════════════════ RENDER ═══════════════════ */
-function getModuleStatus(id) {
-  if (userProgress.completedModules.includes(id)) return 'done';
-  const prev = id - 1;
-  if (id === 1 || userProgress.completedModules.includes(prev)) return 'active';
+/* ══════════ RENDER ══════════ */
+let currentModule = 1;
+
+function getStatus(id) {
+  if (UP.completedModules.includes(id)) return 'done';
+  if (id === 1 || UP.completedModules.includes(id-1)) return 'active';
   return 'locked';
 }
 
+function hasCompletedExercises(moduleId) {
+  return UP.completedExercises.includes(moduleId);
+}
+
 function renderAll() {
+  const active = MODULES.find(m=>getStatus(m.id)==='active')||MODULES[0];
+  currentModule = active.id;
   renderModuleList();
   renderModuleTabs();
   renderDashStats();
   renderVocab();
   renderGrammar();
-  const currentActive = MODULES.find(m => getModuleStatus(m.id) === 'active') || MODULES[0];
-  currentModule = currentActive.id;
   document.getElementById('module-content').innerHTML = MODULE_CONTENT[currentModule];
+  updateNavExamBtn();
+}
+
+function updateNavExamBtn() {
+  const btn = document.getElementById('nav-exam-btn');
+  if (hasCompletedExercises(currentModule) && !UP.completedModules.includes(currentModule)) {
+    btn.classList.remove('locked');
+    btn.textContent = 'Take exam';
+  } else if (UP.completedModules.includes(currentModule)) {
+    btn.classList.add('locked');
+    btn.textContent = '✓ Passed';
+  } else {
+    btn.classList.add('locked');
+    btn.textContent = 'Complete exercises first';
+  }
+}
+
+function startExamFromNav() {
+  if (!hasCompletedExercises(currentModule)) return;
+  showPage('lessons');
+  showExamView();
 }
 
 function renderDashStats() {
-  const done = userProgress.completedModules.length;
-  const pct = Math.round((done / 7) * 100);
-  document.getElementById('dash-progress').style.width = pct + '%';
-  document.getElementById('dash-progress-label').textContent = done + ' of 7 modules completed · ' + pct + '% toward A2';
+  const done = UP.completedModules.length;
+  const pct = Math.round((done/7)*100);
+  document.getElementById('dash-progress').style.width = pct+'%';
+  document.getElementById('dash-progress-label').textContent = done+' of 7 modules completed · '+pct+'% toward A2';
   document.getElementById('stat-modules').textContent = done;
-  document.getElementById('stat-exercises').textContent = userProgress.exerciseCount;
-  document.getElementById('stat-words').textContent = Array.from(userVocabKnown).length;
-  const scores = Object.values(userProgress.examScores);
-  const passRate = scores.length ? Math.round(scores.filter(s=>s>=70).length/scores.length*100)+'%' : '—';
-  document.getElementById('stat-pass').textContent = passRate;
+  document.getElementById('stat-exercises').textContent = UP.exerciseCount;
+  document.getElementById('stat-words').textContent = Array.from(vocabKnown).length;
+  const scores = Object.values(UP.examScores);
+  document.getElementById('stat-pass').textContent = scores.length ? Math.round(scores.filter(s=>s>=70).length/scores.length*100)+'%' : '—';
 }
 
 function renderModuleList() {
-  document.getElementById('module-list').innerHTML = MODULES.map(m => {
-    const status = getModuleStatus(m.id);
-    const score = userProgress.examScores[m.id];
-    const scoreText = status==='done' ? (score+'%') : status==='active' ? 'In progress' : 'Locked';
-    const scoreColor = status==='active'?'#c0392b':status==='locked'?'#ccc':'#888';
-    return `<div class="module-item ${status==='locked'?'locked':''}" onclick="${status!=='locked'?`openModule(${m.id})`:''}">
-      <div class="mod-status ${status}">${status==='done'?'✓':m.id}</div>
+  document.getElementById('module-list').innerHTML = MODULES.map(m=>{
+    const s = getStatus(m.id);
+    const score = UP.examScores[m.id];
+    const badge = s==='done'?`<span class="mod-badge done">Passed ${score}%</span>`:s==='active'?`<span class="mod-badge active">In progress</span>`:`<span class="mod-badge locked">Locked</span>`;
+    return `<div class="module-item ${s==='locked'?'locked':''}" onclick="${s!=='locked'?`openModule(${m.id})`:''}">
+      <div class="mod-status ${s}">${s==='done'?'✓':m.id}</div>
       <div class="mod-info"><div class="mod-name">${m.name}</div><div class="mod-meta">${m.meta}</div></div>
-      <div class="mod-score" style="color:${scoreColor}">${scoreText}</div>
+      ${badge}
     </div>`;
   }).join('');
 }
 
 function renderModuleTabs() {
-  document.getElementById('module-tabs').innerHTML = MODULES.map(m => {
-    const status = getModuleStatus(m.id);
-    return `<button class="module-tab ${m.id===currentModule?'active':''} ${status==='locked'?'locked':''}"
-      onclick="${status!=='locked'?`switchModule(${m.id},this)`:''}">
+  document.getElementById('module-tabs').innerHTML = MODULES.map(m=>{
+    const s = getStatus(m.id);
+    return `<button class="module-tab ${m.id===currentModule?'active':''} ${s==='locked'?'locked':''}"
+      onclick="${s!=='locked'?`switchModule(${m.id},this)`:''}">
       ${m.id}. ${m.name.split('—')[0].split('&')[0].trim()}
     </button>`;
   }).join('');
 }
 
-let currentModule = 4;
 function switchModule(id, btn) {
   currentModule = id;
-  document.querySelectorAll('.module-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.module-tab').forEach(t=>t.classList.remove('active'));
   btn.classList.add('active');
   document.getElementById('module-content').innerHTML = MODULE_CONTENT[id];
+  updateNavExamBtn();
 }
 function openModule(id) {
-  showPage('lessons');
-  currentModule = id;
+  showPage('lessons'); currentModule=id;
   renderModuleTabs();
   document.getElementById('module-content').innerHTML = MODULE_CONTENT[id];
+  backToLesson();
+  updateNavExamBtn();
 }
 
-/* ═══ EXERCISES ═══ */
-let exIdx = 0, exAnswered = false;
-function showExercise() {
-  exIdx = 0; exAnswered = false;
-  document.getElementById('lessons-home').style.display = 'none';
-  document.getElementById('exercise-view').style.display = 'block';
-  document.getElementById('exam-view').style.display = 'none';
+/* ══════════ EXERCISES ══════════ */
+let exIdx=0, exAnswered=false, exWrong=0;
+
+function showExercises() {
+  exIdx=0; exAnswered=false; exWrong=0;
+  document.getElementById('lessons-home').style.display='none';
+  document.getElementById('exercise-view').style.display='block';
+  document.getElementById('exam-view').style.display='none';
+  document.getElementById('ex-module-title').textContent = 'Module '+currentModule+' exercises';
+  document.getElementById('ex-module-sub').textContent = 'Complete all '+MODULE_EXERCISES[currentModule].length+' exercises to unlock the module exam.';
+  const examDone = UP.completedExercises.includes(currentModule);
+  document.getElementById('flow-exam-step').className = 'ex-flow-step'+(examDone?' done':'');
   renderExDots(); renderExQuestion();
-  document.getElementById('ex-next').style.display = 'none';
-  document.getElementById('ex-feedback-area').innerHTML = '';
+  document.getElementById('ex-next').style.display='none';
+  document.getElementById('ex-feedback-area').innerHTML='';
+  document.getElementById('ex-completion').style.display='none';
 }
+
 function renderExDots() {
-  document.getElementById('ex-dots').innerHTML = EXERCISES.map((_,i)=>
+  const qs = MODULE_EXERCISES[currentModule];
+  document.getElementById('ex-dots').innerHTML = qs.map((_,i)=>
     `<div class="progress-dot ${i<exIdx?'done':i===exIdx?'current':''}"></div>`).join('');
 }
+
 function renderExQuestion() {
-  const q = EXERCISES[exIdx];
-  document.getElementById('ex-question-area').innerHTML = `
-    <div class="exercise-card">
-      <div class="ex-label">Exercise ${exIdx+1} of ${EXERCISES.length}</div>
-      <div class="ex-q">${q.q}</div>
-      <div class="options">${q.opts.map((o,i)=>`<button class="opt" onclick="checkEx(this,${i})">${o}</button>`).join('')}</div>
-    </div>`;
-}
-function checkEx(btn, idx) {
-  if(exAnswered) return; exAnswered = true;
-  const q = EXERCISES[exIdx];
-  document.querySelectorAll('#ex-question-area .opt').forEach(b=>b.disabled=true);
-  btn.className = 'opt '+(idx===q.ans?'correct':'wrong');
-  document.getElementById('ex-feedback-area').innerHTML = `<div class="feedback ${idx===q.ans?'correct':'wrong'}">${idx===q.ans?q.fb_c:q.fb_w}</div>`;
-  document.getElementById('ex-next').style.display = 'block';
-  userProgress.exerciseCount++;
-  saveProgress();
-}
-function nextEx() {
-  exIdx = (exIdx+1)%EXERCISES.length; exAnswered = false;
-  renderExDots(); renderExQuestion();
-  document.getElementById('ex-next').style.display = 'none';
-  document.getElementById('ex-feedback-area').innerHTML = '';
+  const qs = MODULE_EXERCISES[currentModule];
+  if (exIdx >= qs.length) { showExCompletion(); return; }
+  const q = qs[exIdx];
+  let html = `<div class="exercise-card">
+    <div class="ex-label">${q.label} — ${exIdx+1} / ${qs.length}</div>
+    <div class="ex-q">${q.q}</div>`;
+  if (q.context) html += `<div class="ex-context">${q.context}</div>`;
+  if (q.type==='mc') {
+    html += `<div class="options">${q.opts.map((o,i)=>`<button class="opt" onclick="checkEx(this,${i})">${o}</button>`).join('')}</div>`;
+  } else {
+    html += `<input class="free-input" id="free-answer" type="text" placeholder="Type your answer…" onkeydown="if(event.key==='Enter')submitFree()">
+    ${q.hint?`<p style="font-size:12px;color:#aaa;margin-bottom:6px">Hint: ${q.hint}</p>`:''}
+    <button class="btn btn-dark" onclick="submitFree()">Check answer</button>`;
+  }
+  html += '</div>';
+  document.getElementById('ex-question-area').innerHTML = html;
 }
 
-/* ═══ EXAM ═══ */
-let examIdx = 0, examAnswers = [], examAnswered = false;
+function checkEx(btn, idx) {
+  if(exAnswered) return; exAnswered=true;
+  const q = MODULE_EXERCISES[currentModule][exIdx];
+  document.querySelectorAll('#ex-question-area .opt').forEach(b=>b.disabled=true);
+  const correct = idx===q.ans;
+  if(!correct) exWrong++;
+  btn.className='opt '+(correct?'correct':'wrong');
+  document.getElementById('ex-feedback-area').innerHTML=`<div class="feedback ${correct?'correct':'wrong'}">${correct?q.fb_c:q.fb_w}</div>`;
+  document.getElementById('ex-next').style.display='block';
+  UP.exerciseCount++;
+}
+
+function submitFree() {
+  if(exAnswered) return; exAnswered=true;
+  const q = MODULE_EXERCISES[currentModule][exIdx];
+  const raw = (document.getElementById('free-answer')||{value:''}).value.trim().toLowerCase();
+  const correct = q.ans.includes(raw) || q.ans.some(a=>raw.includes(a.toLowerCase()));
+  if(!correct) exWrong++;
+  document.getElementById('ex-feedback-area').innerHTML=`<div class="feedback ${correct?'correct':'wrong'}">${correct?'¡Correcto! '+q.fb:q.fb}</div>`;
+  document.getElementById('ex-next').style.display='block';
+  UP.exerciseCount++;
+}
+
+function nextEx() {
+  exIdx++; exAnswered=false;
+  renderExDots(); renderExQuestion();
+  document.getElementById('ex-next').style.display='none';
+  document.getElementById('ex-feedback-area').innerHTML='';
+}
+
+async function showExCompletion() {
+  const total = MODULE_EXERCISES[currentModule].length;
+  const correct = total - exWrong;
+  const pct = Math.round((correct/total)*100);
+  if(!UP.completedExercises.includes(currentModule)) UP.completedExercises.push(currentModule);
+  await saveProgress();
+  updateNavExamBtn();
+  document.getElementById('ex-question-area').innerHTML='';
+  document.getElementById('ex-feedback-area').innerHTML='';
+  document.getElementById('ex-next').style.display='none';
+  document.getElementById('ex-dots').innerHTML='';
+  document.getElementById('ex-completion').style.display='block';
+  document.getElementById('ex-completion').innerHTML=`
+    <div class="completion-card">
+      <div class="completion-score">${pct}%</div>
+      <div class="completion-label">${correct} of ${total} correct — exercises complete!</div>
+      <p style="font-size:13px;color:#639922;margin-bottom:20px">The module exam is now unlocked.</p>
+      <div class="completion-actions">
+        <button class="btn btn-red" onclick="showExamView()">Take the exam →</button>
+        <button class="btn" onclick="showExercises()">Redo exercises</button>
+      </div>
+    </div>`;
+}
+
+/* ══════════ EXAM ══════════ */
+let examIdx=0, examAnswers=[], examAnswered=false;
+
 function showExamView() {
-  examIdx = 0; examAnswers = []; examAnswered = false;
-  document.getElementById('lessons-home').style.display = 'none';
-  document.getElementById('exam-view').style.display = 'block';
-  document.getElementById('exercise-view').style.display = 'none';
-  document.getElementById('exam-title').textContent = 'Module '+currentModule+' exam — '+MODULES[currentModule-1].name;
-  document.getElementById('exam-result').style.display = 'none';
-  document.getElementById('exam-question-area').style.display = 'block';
-  document.getElementById('exam-dots').style.display = 'flex';
-  document.getElementById('exam-next').style.display = 'none';
-  document.getElementById('exam-feedback-area').innerHTML = '';
+  if(!hasCompletedExercises(currentModule)) return;
+  examIdx=0; examAnswers=[]; examAnswered=false;
+  document.getElementById('lessons-home').style.display='none';
+  document.getElementById('exercise-view').style.display='none';
+  document.getElementById('exam-view').style.display='block';
+  document.getElementById('exam-title').textContent='Module '+currentModule+' exam — '+MODULES[currentModule-1].name;
+  document.getElementById('exam-result').style.display='none';
+  document.getElementById('exam-question-area').style.display='block';
+  document.getElementById('exam-dots').style.display='flex';
+  document.getElementById('exam-next').style.display='none';
+  document.getElementById('exam-feedback-area').innerHTML='';
   renderExamDots(); renderExamQ();
 }
+
 function renderExamDots() {
-  document.getElementById('exam-dots').innerHTML = EXAM_QS.map((_,i)=>
+  const qs=MODULE_EXAMS[currentModule];
+  document.getElementById('exam-dots').innerHTML=qs.map((_,i)=>
     `<div class="progress-dot ${i<examIdx?'done':i===examIdx?'current':''}"></div>`).join('');
 }
+
 function renderExamQ() {
-  const q = EXAM_QS[examIdx];
-  document.getElementById('exam-question-area').innerHTML = `
+  const q=MODULE_EXAMS[currentModule][examIdx];
+  document.getElementById('exam-question-area').innerHTML=`
     <div class="exercise-card">
-      <div class="ex-label">Question ${examIdx+1} of ${EXAM_QS.length}</div>
+      <div class="ex-label">Question ${examIdx+1} of ${MODULE_EXAMS[currentModule].length}</div>
       <div class="ex-q">${q.q}</div>
       <div class="options">${q.opts.map((o,i)=>`<button class="opt" onclick="checkExamQ(this,${i})">${o}</button>`).join('')}</div>
     </div>`;
 }
-function checkExamQ(btn, idx) {
-  if(examAnswered) return; examAnswered = true;
-  const q = EXAM_QS[examIdx];
-  const correct = idx===q.ans;
-  examAnswers.push({correct, qIdx:examIdx});
+
+function checkExamQ(btn,idx) {
+  if(examAnswered) return; examAnswered=true;
+  const q=MODULE_EXAMS[currentModule][examIdx];
+  const correct=idx===q.ans;
+  examAnswers.push({correct,qIdx:examIdx});
   document.querySelectorAll('#exam-question-area .opt').forEach(b=>b.disabled=true);
-  btn.className = 'opt '+(correct?'correct':'wrong');
-  document.getElementById('exam-feedback-area').innerHTML = `<div class="feedback ${correct?'correct':'wrong'}">${correct?'¡Correcto!':'Incorrect — keep going.'}</div>`;
-  const isLast = examIdx===EXAM_QS.length-1;
-  const nextBtn = document.getElementById('exam-next-btn');
-  nextBtn.textContent = isLast?'See results →':'Next question →';
-  nextBtn.onclick = isLast?showExamResult:nextExamQ;
-  document.getElementById('exam-next').style.display = 'block';
+  btn.className='opt '+(correct?'correct':'wrong');
+  document.getElementById('exam-feedback-area').innerHTML=`<div class="feedback ${correct?'correct':'wrong'}">${correct?'¡Correcto!':'Incorrect — keep going.'}</div>`;
+  const isLast=examIdx===MODULE_EXAMS[currentModule].length-1;
+  const nb=document.getElementById('exam-next-btn');
+  nb.textContent=isLast?'See results →':'Next →';
+  nb.onclick=isLast?showExamResult:nextExamQ;
+  document.getElementById('exam-next').style.display='block';
 }
+
 function nextExamQ() {
-  examIdx++; examAnswered = false;
+  examIdx++; examAnswered=false;
   renderExamDots(); renderExamQ();
-  document.getElementById('exam-next').style.display = 'none';
-  document.getElementById('exam-feedback-area').innerHTML = '';
+  document.getElementById('exam-next').style.display='none';
+  document.getElementById('exam-feedback-area').innerHTML='';
 }
+
 async function showExamResult() {
-  const score = Math.round((examAnswers.filter(a=>a.correct).length/EXAM_QS.length)*100);
-  const passed = score>=70;
-  if(passed && !userProgress.completedModules.includes(currentModule)) {
-    userProgress.completedModules.push(currentModule);
-  }
-  userProgress.examScores[currentModule] = score;
+  const score=Math.round((examAnswers.filter(a=>a.correct).length/MODULE_EXAMS[currentModule].length)*100);
+  const passed=score>=70;
+  if(passed && !UP.completedModules.includes(currentModule)) UP.completedModules.push(currentModule);
+  UP.examScores[currentModule]=score;
   await saveProgress();
-  renderModuleList();
-  renderModuleTabs();
-  renderDashStats();
-  document.getElementById('exam-question-area').style.display = 'none';
-  document.getElementById('exam-dots').style.display = 'none';
-  document.getElementById('exam-next').style.display = 'none';
-  document.getElementById('exam-feedback-area').innerHTML = '';
-  const wrongItems = examAnswers.filter(a=>!a.correct).map(a=>`<div class="review-item"><div class="review-dot wrong"></div><div>${EXAM_QS[a.qIdx].q}</div></div>`).join('');
-  document.getElementById('exam-result').style.display = 'block';
-  document.getElementById('exam-result').innerHTML = `
+  renderModuleList(); renderModuleTabs(); renderDashStats(); updateNavExamBtn();
+  document.getElementById('exam-question-area').style.display='none';
+  document.getElementById('exam-dots').style.display='none';
+  document.getElementById('exam-next').style.display='none';
+  document.getElementById('exam-feedback-area').innerHTML='';
+  const wrongItems=examAnswers.filter(a=>!a.correct).map(a=>`<div class="review-item"><div class="review-dot"></div><div>${MODULE_EXAMS[currentModule][a.qIdx].q}</div></div>`).join('');
+  document.getElementById('exam-result').style.display='block';
+  document.getElementById('exam-result').innerHTML=`
     <div class="result-card">
       <div class="result-score ${passed?'pass':'fail'}">${score}%</div>
-      <div class="result-label">${passed?'¡Muy bien! You passed and unlocked the next module.':'Not quite. Review the topics below and try again.'}</div>
-      ${!passed&&wrongItems?`<div class="review-list"><div class="section-title" style="margin-bottom:8px">Review before retrying</div>${wrongItems}</div>`:''}
+      <div style="font-size:13px;color:#888;margin-bottom:14px">${passed?'¡Muy bien! Module unlocked.':'Not quite — review and try again.'}</div>
+      ${!passed&&wrongItems?`<div class="review-list"><div class="section-title" style="margin-bottom:6px">Questions to review</div>${wrongItems}</div>`:''}
       <div style="margin-top:16px;display:flex;gap:8px;justify-content:center">
-        ${passed?'<button class="btn btn-dark" onclick="backToLesson()">Continue</button>':'<button class="btn btn-dark" onclick="showExamView()">Retry exam</button><button class="btn" onclick="backToLesson()">Review theory</button>'}
+        ${passed?'<button class="btn btn-dark" onclick="backToLesson()">Next module →</button>':'<button class="btn btn-dark" onclick="showExamView()">Retry exam</button><button class="btn" onclick="showExercises()">Back to exercises</button>'}
       </div>
     </div>`;
 }
+
 function backToLesson() {
-  document.getElementById('exercise-view').style.display = 'none';
-  document.getElementById('exam-view').style.display = 'none';
-  document.getElementById('lessons-home').style.display = 'block';
+  document.getElementById('exercise-view').style.display='none';
+  document.getElementById('exam-view').style.display='none';
+  document.getElementById('lessons-home').style.display='block';
 }
 
-/* ═══ VOCABULARY ═══ */
-let vFilter = 'all', showCurriculum = false;
-function setVFilter(f,btn) {
-  vFilter = f;
-  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  renderVocab();
-}
-function toggleCurriculum() {
-  showCurriculum = !showCurriculum;
-  document.getElementById('vocab-toggle').classList.toggle('on',showCurriculum);
-  renderVocab();
-}
+/* ══════════ VOCAB ══════════ */
+let vFilter='all', showCurriculum=false;
+function setVFilter(f,btn) { vFilter=f; document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); renderVocab(); }
+function toggleCurriculum() { showCurriculum=!showCurriculum; document.getElementById('vocab-toggle').classList.toggle('on',showCurriculum); renderVocab(); }
 function renderVocab() {
-  const q = (document.getElementById('vocab-search')||{value:''}).value.toLowerCase();
-  const rows = VOCAB.filter(w=>{
-    const typeOk = vFilter==='all'||w.type===vFilter;
-    const known = userVocabKnown.has(w.es);
-    const visOk = known||showCurriculum;
-    const searchOk = !q||w.es.toLowerCase().includes(q)||w.en.toLowerCase().includes(q);
+  const q=(document.getElementById('vocab-search')||{value:''}).value.toLowerCase();
+  const rows=VOCAB.filter(w=>{
+    const typeOk=vFilter==='all'||w.type===vFilter;
+    const visOk=vocabKnown.has(w.es)||showCurriculum;
+    const searchOk=!q||w.es.toLowerCase().includes(q)||w.en.toLowerCase().includes(q);
     return typeOk&&visOk&&searchOk;
   });
-  const tbody = document.getElementById('vocab-body');
-  if(tbody) tbody.innerHTML = rows.map(w=>`
-    <tr onclick="showVocabPopup(${VOCAB.indexOf(w)})">
-      <td class="vocab-es">${w.es}</td>
-      <td>${w.en}</td>
-      <td><span class="vocab-badge ${w.type}">${w.type}</span></td>
-      <td>${w.gender||'—'}</td>
-      <td><span class="known-indicator ${userVocabKnown.has(w.es)?'yes':'no'}"></span></td>
-    </tr>`).join('');
+  const tb=document.getElementById('vocab-body');
+  if(tb) tb.innerHTML=rows.map(w=>`<tr onclick="showVocabPopup(${VOCAB.indexOf(w)})">
+    <td class="vocab-es">${w.es}</td><td>${w.en}</td>
+    <td><span class="vocab-badge ${w.type}">${w.type}</span></td>
+    <td>${w.gender||'—'}</td>
+    <td><span class="known-dot ${vocabKnown.has(w.es)?'yes':'no'}"></span></td>
+  </tr>`).join('');
 }
 function showVocabPopup(i) {
-  const w = VOCAB[i];
-  document.getElementById('popup-word').textContent = w.es;
-  document.getElementById('popup-type').textContent = w.type+(w.gender?' · '+w.gender:'')+ ' · '+w.en;
-  document.getElementById('popup-note').textContent = w.note;
-  const cs = document.getElementById('popup-conj-section');
-  if(w.conj){
-    const subj=['yo','tú','él/ella','nosotros','ellos/ellas'];
-    document.getElementById('popup-conj').innerHTML = w.conj.split(',').map((f,i)=>`<tr><td>${subj[i]}</td><td>${f}</td></tr>`).join('');
-    cs.style.display='block';
-  } else cs.style.display='none';
-  const es = document.getElementById('popup-example-section');
-  if(w.ex_es){
-    document.getElementById('popup-ex-es').textContent = w.ex_es;
-    document.getElementById('popup-ex-en').textContent = w.ex_en;
-    es.style.display='block';
-  } else es.style.display='none';
+  const w=VOCAB[i];
+  document.getElementById('popup-word').textContent=w.es;
+  document.getElementById('popup-type').textContent=w.type+(w.gender?' · '+w.gender:'')+' · '+w.en;
+  document.getElementById('popup-note').textContent=w.note;
+  const cs=document.getElementById('popup-conj-section');
+  if(w.conj){const s=['yo','tú','él/ella','nosotros','ellos/ellas'];document.getElementById('popup-conj').innerHTML=w.conj.split(',').map((f,i)=>`<tr><td>${s[i]}</td><td>${f}</td></tr>`).join('');cs.style.display='block';}else cs.style.display='none';
+  const es=document.getElementById('popup-ex-section');
+  if(w.ex_es){document.getElementById('popup-ex-es').textContent=w.ex_es;document.getElementById('popup-ex-en').textContent=w.ex_en;es.style.display='block';}else es.style.display='none';
   document.getElementById('vocab-popup').classList.add('show');
 }
-function closePopup(){ document.getElementById('vocab-popup').classList.remove('show'); }
+function closePopup(){document.getElementById('vocab-popup').classList.remove('show');}
 
-/* ═══ GRAMMAR ═══ */
+/* ══════════ GRAMMAR ══════════ */
 function renderGrammar() {
-  const el = document.getElementById('grammar-list');
+  const el=document.getElementById('grammar-list');
   if(!el) return;
-  el.innerHTML = GRAMMAR_TOPICS.map((t,i)=>`
+  el.innerHTML=GRAMMAR_TOPICS.map((t,i)=>`
     <div class="grammar-item">
       <div class="grammar-header" onclick="toggleGrammar(${i})">
-        <div class="grammar-header-left">
-          <div class="grammar-icon ${t.iconClass}">${t.icon}</div>
-          <div class="grammar-title">${t.title}</div>
-        </div>
-        <div class="grammar-tags"><span class="g-tag a1">A1</span><span class="grammar-chevron" id="chevron-${i}">▼</span></div>
+        <div class="grammar-header-left"><div class="grammar-icon ${t.iconClass}">${t.icon}</div><div class="grammar-title">${t.title}</div></div>
+        <div style="display:flex;gap:6px;align-items:center"><span class="g-tag">A1</span><span class="grammar-chevron" id="chevron-${i}">▼</span></div>
       </div>
       <div class="grammar-body" id="gbody-${i}">${t.body}</div>
     </div>`).join('');
 }
-function toggleGrammar(i){
-  const body = document.getElementById('gbody-'+i);
-  const ch = document.getElementById('chevron-'+i);
-  body.classList.toggle('open');
-  ch.textContent = body.classList.contains('open')?'▲':'▼';
-}
+function toggleGrammar(i){const b=document.getElementById('gbody-'+i);const c=document.getElementById('chevron-'+i);b.classList.toggle('open');c.textContent=b.classList.contains('open')?'▲':'▼';}
 
-/* ═══ NAV ═══ */
+/* ══════════ NAV ══════════ */
 function showPage(id){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
