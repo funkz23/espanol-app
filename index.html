@@ -836,7 +836,7 @@ function checkExamQ(btn,idx) {
   const isLast=examIdx===MODULE_EXAMS[currentModule].length-1;
   const nb=document.getElementById('exam-next-btn');
   nb.textContent=isLast?'See results →':'Next →';
-  nb.onclick=isLast?showExamResult:nextExamQ;
+  nb.onclick=isLast?nb.onclick=isLast?()=>showExamResult():nextExamQ;
   document.getElementById('exam-next').style.display='block';
 }
 
